@@ -1,1 +1,41 @@
-/* You can add global styles to this file, and also import other style files */
+
+:root{
+ /* ========= Color Variables ================ */
+
+/* Scroll Bar Colors */
+--scroll-bar-color: #c5cadf;
+--scroll-thumb-color: #70768a;
+--scroll-thumb-hover-color: #454f6b;
+
+/* main theme color */
+
+--main-color-light: #6a59d1;
+--main-color-dark: #7c6cd9;
+--link-navbar-color: #757575;
+
+}
+/* =============== General Settings =========== */
+
+
+* {
+  font-family: "Poppins";
+}
+
+ /* ===============Scroll Bar ================== */
+
+::-webkit-scrollbar {
+  width: 10px;
+  background:var(--scroll-bar-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background:var(--scroll-thumb-color);
+  border-radius: 2em;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background:var(--scroll-thumb-hover-color);
+}
+
+/* ================== Nav Bar ================== */
+

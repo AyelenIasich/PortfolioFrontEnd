@@ -1,0 +1,45 @@
+/* Main theme colors */
+:root {
+  --main-color-light: #6a59d1;
+  --main-color-dark: #7c6cd9;
+  --link-navbar-color: #757575;
+}
+
+#header {
+  transition: 0.6s ease !important;
+}
+
+.nav-item a,
+.navbar .logo {
+  font-weight: 500;
+}
+
+ .nav-item a:hover {
+   color: var(--main-color-light)  !important;
+ }
+
+.logo {
+  font-size: 0.9em;
+  color: var(--link-navbar-color) ;
+}
+
+.btn-outline-login {
+  border-color:var(--main-color-light) !important;
+  color: var(--main-color-light)  !important;
+  font-weight: 500 !important;
+}
+.btn-outline-login:hover {
+  background-color:var(--main-color-light)  !important;
+  color: white !important;
+}
+
+nav .media-icons {
+  align-self: center;
+  padding: 0;
+  margin-bottom: 0.2em;
+}
+
+#btn-login-sm {
+  padding-top: 0.3em !important;
+  padding-bottom: 0.3em !important;
+}
