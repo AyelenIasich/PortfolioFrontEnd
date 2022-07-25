@@ -1,10 +1,5 @@
 
-
-:root {
-  --main-color-light: #6a59d1;
-  --main-color-dark: #7c6cd9;
-  --link-navbar-color: #757575;
-}/* Boton crear */
+/* Boton crear */
 
 .btn-outline-success{
   border: none;
@@ -38,21 +33,4 @@
 .btn-outline-volver:hover {
   background-color: var(--main-color-light) !important;
   color: white !important;
-}
-
-/* Titulo */
-
-.title{
-  font-weight:500;
-  position: relative;
-}
-
-.title::before{
-  content: " ";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 3px;
-  width: 30px;
-  background-color: var(--main-color-light)
 }

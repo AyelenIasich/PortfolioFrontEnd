@@ -54,6 +54,7 @@
   background-color: var(--main-color-light) !important;
   color: white !important;
 }
+
  /* ====================== Lista de elementos educacion ========================*/
 
  .list-group{
@@ -62,4 +63,3 @@
  .list-group-item {
   border: none;
  }
-

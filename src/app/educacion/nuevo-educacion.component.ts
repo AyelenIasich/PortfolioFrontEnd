@@ -4,6 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Educacion } from '../models/educacion';
 import { EducacionService } from '../service/educacion.service';
 
+
 @Component({
   selector: 'app-nuevo-educacion',
   templateUrl: './nuevo-educacion.component.html',

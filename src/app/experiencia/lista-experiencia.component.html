@@ -1,10 +1,14 @@
 <div class="container">
   <div class="row align-items-center">
     <div class="col-12 text-center p-4">
-      <h2>Formación</h2>
+      <h2>Experiencia</h2>
     </div>
     <div class="col mb-2">
-      <button type="button" class="btn btn-outline-inicio" routerLink="/nuevo">
+      <button
+        type="button"
+        class="btn btn-outline-inicio"
+        routerLink="/nuevoexperiencia"
+      >
         <i class="fa-solid fa-plus"></i> Nuevo
       </button>
     </div>
@@ -16,46 +20,44 @@
       >
         <li
           class="p-0 list-group-item mb-1 mt-2"
-          *ngFor="let educacion of ListaEducacion"
+          *ngFor="let experiencia of ListaExperiencia"
           cdkDrag
         >
           <div class="card mb-1">
             <div class="row g-0">
               <div class="col-3 align-self-center text-center">
                 <img
-                  src="{{ educacion.imagen }}"
+                  src="{{ experiencia.imagen }}"
                   class="img-fluid rounded-start"
                   alt="..."
                 />
               </div>
               <div class="col-9">
                 <div class="card-body">
-                  <h5 class="card-title">{{ educacion.nombre }}</h5>
+                  <h5 class="card-title">{{ experiencia.nombre }}</h5>
                   <p class="card-text">
-                    <time>{{ educacion.inicio }}</time> -
-                    <time>{{ educacion.fin }}</time>
+                    <time>{{ experiencia.inicio }}</time> -
+                    <time>{{ experiencia.fin }}</time>
                   </p>
                   <p class="card-text">
-                    {{ educacion.titulo }}
+                    {{ experiencia.descripcion }}
                   </p>
                   <p class="card-text">
-                    {{ educacion.lugar }}
+                    {{ experiencia.lugar }}
                   </p>
-                  <div class=" col-md-6 offset-md-6 col-lg-4 offset-lg-8 col-xxl-3 offset-xxl-9">
-                    <button
-                    class="btn btn-outline-eliminar "
-                    (click)="borrar(educacion.id)"
+                  <div
+                    class="col-md-6 offset-md-6 col-lg-4 offset-lg-8 col-xxl-3 offset-xxl-9"
                   >
-                    <i class="fa-solid fa-trash-can"></i> Eliminar
-                  </button>
                     <button
-                      class="btn btn-outline-editar ms-2"
-                      routerLink="/editar/{{ educacion.id }}"
+                      class="btn btn-outline-eliminar"
+                      (click)="borrar(experiencia.id)"
                     >
+                      <i class="fa-solid fa-trash-can"></i> Eliminar
+                    </button>
+                    <button class="btn btn-outline-editar ms-2">
                       <i class="fa-solid fa-pen"></i>
                       Editar
                     </button>
-
                   </div>
                 </div>
               </div>
@@ -66,4 +68,3 @@
     </div>
   </div>
 </div>
-

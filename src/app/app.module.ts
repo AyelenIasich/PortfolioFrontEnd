@@ -12,11 +12,16 @@ import { ListaEducacionComponent } from './educacion/lista-educacion.component';
 import { NuevoEducacionComponent } from './educacion/nuevo-educacion.component';
 import { EditarEducacionComponent } from './educacion/editar-educacion.component';
 import { VistaMainComponent } from './main/vista-main.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 //external
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { ListaExperienciaComponent } from './experiencia/lista-experiencia.component';
+import { NuevoExperienciaComponent } from './experiencia/nuevo-experiencia.component';
+import { EditarExperienciaComponent } from './experiencia/editar-experiencia.component';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -27,7 +32,11 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     ListaEducacionComponent,
     NuevoEducacionComponent,
     EditarEducacionComponent,
-    VistaMainComponent
+    VistaMainComponent,
+    ListaExperienciaComponent,
+    NuevoExperienciaComponent,
+    EditarExperienciaComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +47,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     RouterModule,
     FormsModule,
     DragDropModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
