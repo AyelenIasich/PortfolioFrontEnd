@@ -12,11 +12,12 @@ import { EducacionService } from '../service/educacion.service';
 })
 export class NuevoEducacionComponent implements OnInit {
   nombre: string = '';
-  inicio: number = 2022;
-  fin: number = 2022;
+  inicio: number;
+  fin: number ;
   lugar: string = '';
   titulo: string = '';
   imagen: string = '';
+  modalidad: string = '';
 
   constructor(
     private educacionService: EducacionService,
@@ -27,7 +28,7 @@ export class NuevoEducacionComponent implements OnInit {
   ngOnInit(){
   }
   onCreate(): void {
-    const educacion = new Educacion(this.nombre, this.inicio,this.fin, this.lugar, this.titulo, this.imagen);
+    const educacion = new Educacion(this.nombre, this.inicio,this.fin, this.lugar, this.titulo, this.imagen, this.modalidad);
     this.educacionService.save(educacion).subscribe((data) => {
       this.toastr.success('Nueva lista de educación creada', 'OK', { timeOut: 3000});
       this.router.navigate(['/']);

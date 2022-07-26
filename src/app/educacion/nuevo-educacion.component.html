@@ -1,147 +1,199 @@
-<div class="container">
-  <div class="row mt-5">
-    <div class="col-md-7 col-lg-5 mx-auto">
-      <div class="row">
-        <div class="col-8 align-self-center mb-3">
-          <h1 class="title h4">Nueva lista de educación</h1>
-        </div>
-      </div>
+<div id="educacion">
+  <div class="container-fluid background"></div>
+  <div class="container">
+    <div class="row pt-4 pb-5">
+      <div class="col-10 col-md-7 col-lg-5 mx-auto form p-4 mb-5">
+        <form
+          name="formEducacion "
+          (ngSubmit)="f.form.valid && onCreate()"
+          novalidate
+          #f="ngForm"
+        >
+          <div class="row mt-1">
+            <div class="align-self-center mb-3 mt-2">
+              <h1 class="title h4">Nueva lista de educación</h1>
+            </div>
+          </div>
+          <div class="form-group mb-3 mt-2">
+            <label class="mb-2" for="nombre"
+              >Nombre de la Institución Educativa</label
+            >
+            <input
+              placeholder="IPES Florentino Ameghino"
+              type="text"
+              class="form-control"
+              id="nombre"
+              name="nombre"
+              [(ngModel)]="nombre"
+              required
+              #nombreInput="ngModel"
+              [ngClass]="{
+                'is-invalid':
+                  nombreInput.touched || (f.submitted && nombreInput.invalid)
+              }"
+              [ngClass]="{
+                'is-valid': nombreInput.touched && nombreInput.valid
+              }"
+            />
+            <div class="invalid-feedback">Este campo es requerido.</div>
+          </div>
+          <div class="row">
+            <div class="col-12 col-sm-6">
+              <div class="form-group mb-4">
+                <label class="mb-2" for="inicio">Año de inicio</label>
+                <input
+                  placeholder="2017"
+                  type="number"
+                  class="form-control"
+                  id="inicio"
+                  name="inicio"
+                  [(ngModel)]="inicio"
+                  required
+                  #inicioEduInput="ngModel"
+                  [ngClass]="{
+                    'is-invalid':
+                      inicioEduInput.touched ||
+                      (f.submitted && inicioEduInput.invalid)
+                  }"
+                  [ngClass]="{
+                    'is-valid': inicioEduInput.touched && inicioEduInput.valid
+                  }"
+                />
+                <div class="invalid-feedback">Este campo es requerido.</div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6">
+              <div class="form-group mb-4">
+                <label class="mb-2" for="fin">Año de finalización </label>
+                <input
+                  placeholder="2022"
+                  type="number"
+                  class="form-control"
+                  id="fin"
+                  name="fin"
+                  [(ngModel)]="fin"
+                  required
+                  #finEduInput="ngModel"
+                  [ngClass]="{
+                    'is-invalid':
+                      finEduInput.touched ||
+                      (f.submitted && finEduInput.invalid)
+                  }"
+                  [ngClass]="{
+                    'is-valid': finEduInput.touched && finEduInput.valid
+                  }"
+                />
+                <div class="invalid-feedback">Este campo es requerido.</div>
+              </div>
+            </div>
+          </div>
 
-      <form
-        name="formEducacion"
-        (ngSubmit)="f.form.valid && onCreate()"
-        novalidate
-        #f="ngForm"
-      >
-        <div class="form-group mb-3">
-          <label class="mb-2" for="nombre"
-            >Nombre de la Institución Educativa</label
-          >
-          <input
-            type="text"
-            class="form-control"
-            id="nombre"
-            name="nombre"
-            [(ngModel)]="nombre"
-            required
-            #nombreInput="ngModel"
-            [ngClass]="{
-              'is-invalid':
-                nombreInput.touched || (f.submitted && nombreInput.invalid)
-            }"
-            [ngClass]="{ 'is-valid': nombreInput.touched && nombreInput.valid }"
-          />
-          <div class="invalid-feedback">Este campo es requerido.</div>
-        </div>
-        <div class="form-group mb-4">
-          <label class="mb-2" for="inicio">Año de inicio</label>
-          <input
-            type="number"
-            class="form-control"
-            id="inicio"
-            name="inicio"
-            [(ngModel)]="inicio"
-            required
-            #inicioEduInput="ngModel"
-            [ngClass]="{
-              'is-invalid':
-                inicioEduInput.touched ||
-                (f.submitted && inicioEduInput.invalid)
-            }"
-            [ngClass]="{
-              'is-valid': inicioEduInput.touched && inicioEduInput.valid
-            }"
-          />
-          <div class="invalid-feedback">Este campo es requerido.</div>
-        </div>
-        <div class="form-group mb-4">
-          <label class="mb-2" for="fin">Año de finalización del curso</label>
-          <input
-            type="number"
-            class="form-control"
-            id="fin"
-            name="fin"
-            [(ngModel)]="fin"
-            required
-            #finEduInput="ngModel"
-            [ngClass]="{
-              'is-invalid':
-              finEduInput.touched || (f.submitted && finEduInput.invalid)
-            }"
-            [ngClass]="{ 'is-valid': finEduInput.touched && finEduInput.valid }"
-          />
-          <div class="invalid-feedback">Este campo es requerido.</div>
-        </div>
-        <div class="form-group mb-4">
-          <label class="mb-2" for="titulo">Título obtenido</label>
-          <input
-            type="text"
-            class="form-control"
-            id="titulo"
-            name="titulo"
-            [(ngModel)]="titulo"
-            required
-            #tituloEduInput="ngModel"
-            [ngClass]="{
-              'is-invalid':
-              tituloEduInput.touched || (f.submitted && tituloEduInput.invalid)
-            }"
-            [ngClass]="{ 'is-valid': tituloEduInput.touched && tituloEduInput.valid }"
-          />
-          <div class="invalid-feedback">Este campo es requerido.</div>
-        </div>
-        <div class="form-group mb-4">
-          <label class="mb-2" for="lugar">Tipo de modalidad y lugar</label>
-          <input
-            type="text"
-            class="form-control"
-            id="lugar"
-            name="lugar"
-            [(ngModel)]="lugar"
-            required
-            #lugarEduInput="ngModel"
-            [ngClass]="{
-              'is-invalid':
-              lugarEduInput.touched ||
-                (f.submitted && lugarEduInput.invalid)
-            }"
-            [ngClass]="{
-              'is-valid': lugarEduInput.touched && lugarEduInput.valid
-            }"
-          />
-          <div class="invalid-feedback">Este campo es requerido.</div>
-        </div>
-        <div class="form-group mb-4">
-          <label class="mb-2" for="imagen">Url de la imagen</label>
-          <input
-            type="text"
-            class="form-control"
-            id="imagen"
-            name="imagen"
-            [(ngModel)]="imagen"
-            required
-            #ImagenEduInput="ngModel"
-            [ngClass]="{
-              'is-invalid':
-              ImagenEduInput.touched ||
-                (f.submitted && ImagenEduInput.invalid)
-            }"
-            [ngClass]="{
-              'is-valid': ImagenEduInput.touched && ImagenEduInput.valid
-            }"
-          />
-          <div class="invalid-feedback">Este campo es requerido.</div>
-        </div>
-        <div class="d-grid gap-2 d-sm-block col-sm-12 d-sm-block text-end mb-3">
-          <button type="button" class="btn btn-outline-volver" routerLink="/">
-            <i class="fa-solid fa-angle-left"></i> Volver
-          </button>
-          <button class="btn btn-outline-success ms-sm-2">
-            <i class="fa-solid fa-plus"></i>
-            Crear
-          </button>
-        </div>
-      </form>
+          <div class="form-group mb-4">
+            <label class="mb-2" for="titulo">Título obtenido</label>
+            <input
+              placeholder="Profesora de Inglés"
+              type="text"
+              class="form-control"
+              id="titulo"
+              name="titulo"
+              [(ngModel)]="titulo"
+              required
+              #tituloEduInput="ngModel"
+              [ngClass]="{
+                'is-invalid':
+                  tituloEduInput.touched ||
+                  (f.submitted && tituloEduInput.invalid)
+              }"
+              [ngClass]="{
+                'is-valid': tituloEduInput.touched && tituloEduInput.valid
+              }"
+            />
+            <div class="invalid-feedback">Este campo es requerido.</div>
+          </div>
+          <div class="form-group mb-4">
+            <label class="mb-2" for="lugar">Modalidad</label>
+            <input
+              placeholder="Terceario"
+              type="text"
+              class="form-control"
+              id="modalidad"
+              name="modalidad"
+              [(ngModel)]="modalidad"
+              required
+              #modalidadEduInput="ngModel"
+              [ngClass]="{
+                'is-invalid':
+                  modalidadEduInput.touched ||
+                  (f.submitted && modalidadEduInput.invalid)
+              }"
+              [ngClass]="{
+                'is-valid': modalidadEduInput.touched && modalidadEduInput.valid
+              }"
+            />
+            <div class="invalid-feedback">Este campo es requerido.</div>
+          </div>
+          <div class="form-group mb-4">
+            <label class="mb-2" for="lugar">Direccion de la institución</label>
+            <input
+              placeholder="Gdor. Deloqui. Ushuaia, Tierra del Fuego."
+              type="text"
+              class="form-control"
+              id="lugar"
+              name="lugar"
+              [(ngModel)]="lugar"
+              required
+              #lugarEduInput="ngModel"
+              [ngClass]="{
+                'is-invalid':
+                  lugarEduInput.touched ||
+                  (f.submitted && lugarEduInput.invalid)
+              }"
+              [ngClass]="{
+                'is-valid': lugarEduInput.touched && lugarEduInput.valid
+              }"
+            />
+            <div class="invalid-feedback">Este campo es requerido.</div>
+          </div>
+          <div class="form-group mb-4">
+            <label class="mb-2" for="imagen">Url de la imagen</label>
+            <input
+              placeholder="https://ibb.co/qCMkTyp"
+              type="text"
+              class="form-control"
+              id="imagen"
+              name="imagen"
+              [(ngModel)]="imagen"
+              required
+              #ImagenEduInput="ngModel"
+              [ngClass]="{
+                'is-invalid':
+                  ImagenEduInput.touched ||
+                  (f.submitted && ImagenEduInput.invalid)
+              }"
+              [ngClass]="{
+                'is-valid': ImagenEduInput.touched && ImagenEduInput.valid
+              }"
+            />
+            <div class="invalid-feedback">Este campo es requerido.</div>
+          </div>
+          <div class="row justify-content-center align-items-center mb-3 pt-2">
+            <div class="col-6">
+              <button
+                type="button"
+                class="btn btn-outline-volver col-6"
+                routerLink="/"
+              >
+                <i class="fa-solid fa-angle-left"></i> Volver
+              </button>
+            </div>
+            <div class="col-6">
+              <button class="btn btn-outline-success col-6 pt-2">
+                <i class="fa-solid fa-plus"></i> Crear
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 </div>
