@@ -1,9 +1,3 @@
-:root {
-  --main-color-light: #6a59d1;
-  --main-color-dark: #7c6cd9;
-  --link-navbar-color: #757575;
-}
-
 /* ============= Background ================ */
 
 .background {
@@ -18,16 +12,13 @@
   position: absolute;
 }
 
-#educacion {
+#experiencia {
   position: relative;
-
 }
-
 #educacion .container-fluid,
 #educacion .row {
   height: 100%;
 }
-
 /* ============= Form ================ */
 
 .form {
@@ -50,12 +41,12 @@
 }
 
 /* Boton crear */
+
 .btn-outline-success {
   border: none;
   color: white !important;
-  font-weight: 500 !important;
+  font-weight: 500;
   width: 100%;
-
   box-shadow: inset 0 0 0 0 rgb(203, 114, 194) !important;
   transition: ease-out 0.5s;
   background: rgb(203, 114, 194);
@@ -92,7 +83,6 @@
 }
 
 .title::before {
-
   content: " ";
   position: absolute;
   left: 0;

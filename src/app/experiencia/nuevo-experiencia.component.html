@@ -1,22 +1,22 @@
-<div id="educacion">
+<div id="experiencia">
   <div class="container-fluid background"></div>
   <div class="container">
     <div class="row pt-4 pb-5">
       <div class="col-10 col-md-7 col-lg-5 mx-auto form p-4 mb-5">
         <form
-          name="formEducacion "
-          (ngSubmit)="f.form.valid && onUpdate()"
+          name="form"
+          (ngSubmit)="f.form.valid && onCreate()"
           novalidate
           #f="ngForm"
         >
           <div class="row mt-1">
             <div class="align-self-center mb-3 mt-2">
-              <h1 class="title h4">Editar educación</h1>
+              <h1 class="h4 title">Nueva lista de experiencia</h1>
             </div>
           </div>
           <div class="form-group mb-3 mt-2">
             <label class="mb-2" for="nombre"
-              >Nombre de la Institución Educativa</label
+              >Nombre de la establecimiento</label
             >
             <input
               placeholder="IPES Florentino Ameghino"
@@ -24,64 +24,59 @@
               class="form-control"
               id="nombre"
               name="nombre"
-              [(ngModel)]="educacion.nombre"
+              [(ngModel)]="nombre"
               required
-              #nombreInput="ngModel"
+              #nameInput="ngModel"
               [ngClass]="{
                 'is-invalid':
-                  nombreInput.touched || (f.submitted && nombreInput.invalid)
+                  nameInput.touched || (f.submitted && nameInput.invalid)
               }"
-              [ngClass]="{
-                'is-valid': nombreInput.touched && nombreInput.valid
-              }"
+              [ngClass]="{ 'is-valid': nameInput.touched && nameInput.valid }"
             />
             <div class="invalid-feedback">Este campo es requerido.</div>
           </div>
           <div class="row">
-            <div class="col-12 col-sm-6">
+            <div class="col col-12 col-sm-6">
               <div class="form-group mb-4">
                 <label class="mb-2" for="inicio">Año de inicio</label>
                 <input
-                  placeholder="2017"
+                  placeholder="2018"
                   type="number"
                   class="form-control"
                   id="inicio"
                   name="inicio"
-                  [(ngModel)]="educacion.inicio"
+                  [(ngModel)]="inicio"
                   required
-                  #inicioEduInput="ngModel"
+                  #inicioInput="ngModel"
                   [ngClass]="{
                     'is-invalid':
-                      inicioEduInput.touched ||
-                      (f.submitted && inicioEduInput.invalid)
+                      inicioInput.touched ||
+                      (f.submitted && inicioInput.invalid)
                   }"
                   [ngClass]="{
-                    'is-valid': inicioEduInput.touched && inicioEduInput.valid
+                    'is-valid': inicioInput.touched && inicioInput.valid
                   }"
                 />
                 <div class="invalid-feedback">Este campo es requerido.</div>
               </div>
             </div>
-            <div class="col-12 col-sm-6">
+            <div class="col col-12 col-sm-6">
               <div class="form-group mb-4">
-                <label class="mb-2" for="fin">Año de finalización </label>
+                <label class="mb-2" for="fin">Año de finalización</label>
                 <input
                   placeholder="2022"
                   type="number"
                   class="form-control"
                   id="fin"
                   name="fin"
-                  [(ngModel)]="educacion.fin"
+                  [(ngModel)]="fin"
                   required
-                  #finEduInput="ngModel"
+                  #finInput="ngModel"
                   [ngClass]="{
                     'is-invalid':
-                      finEduInput.touched ||
-                      (f.submitted && finEduInput.invalid)
+                      finInput.touched || (f.submitted && finInput.invalid)
                   }"
-                  [ngClass]="{
-                    'is-valid': finEduInput.touched && finEduInput.valid
-                  }"
+                  [ngClass]="{ 'is-valid': finInput.touched && finInput.valid }"
                 />
                 <div class="invalid-feedback">Este campo es requerido.</div>
               </div>
@@ -89,89 +84,88 @@
           </div>
 
           <div class="form-group mb-4">
-            <label class="mb-2" for="titulo">Título obtenido</label>
+            <label class="mb-2" for="descripcion">Descripcion del empleo</label>
             <input
-              placeholder="Profesora de Inglés"
+              placeholder="Clases de apoyo de inglés."
               type="text"
               class="form-control"
-              id="titulo"
-              name="titulo"
-              [(ngModel)]="educacion.titulo"
+              id="descripcion"
+              name="descripcion"
+              [(ngModel)]="descripcion"
               required
-              #tituloEduInput="ngModel"
+              #descripcionInput="ngModel"
               [ngClass]="{
                 'is-invalid':
-                  tituloEduInput.touched ||
-                  (f.submitted && tituloEduInput.invalid)
+                  descripcionInput.touched ||
+                  (f.submitted && descripcionInput.invalid)
               }"
               [ngClass]="{
-                'is-valid': tituloEduInput.touched && tituloEduInput.valid
+                'is-valid': descripcionInput.touched && descripcionInput.valid
               }"
             />
             <div class="invalid-feedback">Este campo es requerido.</div>
           </div>
           <div class="form-group mb-4">
-            <label class="mb-2" for="lugar">Modalidad</label>
+            <label class="mb-2" for="modalidad">Modalidad</label>
             <input
-              placeholder="Terceario"
+              placeholder="Freelance"
               type="text"
               class="form-control"
               id="modalidad"
               name="modalidad"
-              [(ngModel)]="educacion.modalidad"
+              [(ngModel)]="modalidad"
               required
-              #modalidadEduInput="ngModel"
+              #modalidadInput="ngModel"
               [ngClass]="{
                 'is-invalid':
-                  modalidadEduInput.touched ||
-                  (f.submitted && modalidadEduInput.invalid)
+                  modalidadInput.touched ||
+                  (f.submitted && modalidadInput.invalid)
               }"
               [ngClass]="{
-                'is-valid': modalidadEduInput.touched && modalidadEduInput.valid
+                'is-valid': modalidadInput.touched && modalidadInput.valid
               }"
             />
             <div class="invalid-feedback">Este campo es requerido.</div>
           </div>
           <div class="form-group mb-4">
-            <label class="mb-2" for="lugar">Direccion de la institución</label>
+            <label class="mb-2" for="lugar ">Dirección de la institución</label>
             <input
               placeholder="Gdor. Deloqui. Ushuaia, Tierra del Fuego."
               type="text"
               class="form-control"
               id="lugar"
               name="lugar"
-              [(ngModel)]="educacion.lugar"
+              [(ngModel)]="lugar"
               required
-              #lugarEduInput="ngModel"
+              #direccionInput="ngModel"
               [ngClass]="{
                 'is-invalid':
-                  lugarEduInput.touched ||
-                  (f.submitted && lugarEduInput.invalid)
+                  direccionInput.touched ||
+                  (f.submitted && direccionInput.invalid)
               }"
               [ngClass]="{
-                'is-valid': lugarEduInput.touched && lugarEduInput.valid
+                'is-valid': direccionInput.touched && direccionInput.valid
               }"
             />
             <div class="invalid-feedback">Este campo es requerido.</div>
           </div>
           <div class="form-group mb-4">
-            <label class="mb-2" for="imagen">Url de la imagen</label>
+            <label class="mb-2" for="imagen ">Url de la imagen</label>
             <input
               placeholder="https://ibb.co/qCMkTyp"
-              type="text"
+              type="url"
               class="form-control"
               id="imagen"
               name="imagen"
-              [(ngModel)]="educacion.imagen"
+              [(ngModel)]="imagen"
               required
-              #ImagenEduInput="ngModel"
+              #imagenInput="ngModel"
               [ngClass]="{
                 'is-invalid':
-                  ImagenEduInput.touched ||
-                  (f.submitted && ImagenEduInput.invalid)
+                  imagenInput.touched || (f.submitted && imagenInput.invalid)
               }"
               [ngClass]="{
-                'is-valid': ImagenEduInput.touched && ImagenEduInput.valid
+                'is-valid': imagenInput.touched && imagenInput.valid
               }"
             />
             <div class="invalid-feedback">Este campo es requerido.</div>
@@ -188,7 +182,7 @@
             </div>
             <div class="col-6">
               <button class="btn btn-outline-success col-6 pt-2">
-                <i class="fa-solid fa-pen-to-square"></i> Guardar
+                <i class="fa-solid fa-plus"></i> Crear
               </button>
             </div>
           </div>

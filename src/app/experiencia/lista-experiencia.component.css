@@ -1,7 +1,12 @@
+:root {
+  --first-color: #0e2431;
+  --second-color: #6a59d1;
+  --third-color: #777;
+}
 
 /* =================== Boton de Nuevo ================= */
 
-.btn-outline-inicio{
+.btn-outline-inicio {
   border: none;
   color: white !important;
   font-weight: 500;
@@ -17,13 +22,12 @@
   );
 }
 
-
 /* =================== Boton de Editar ================= */
 .btn-outline-editar:hover {
   box-shadow: inset 300px 0 0 0 rgb(203, 114, 194) !important;
 }
 
-.btn-outline-editar{
+.btn-outline-editar {
   border: none;
   color: white !important;
   font-weight: 500;
@@ -45,7 +49,7 @@
 
 /* =================== Boton de Borrar ================= */
 
-.btn-outline-eliminar{
+.btn-outline-eliminar {
   border-color: var(--main-color-light) !important;
   color: var(--main-color-light) !important;
   font-weight: 500 !important;
@@ -54,15 +58,15 @@
   background-color: var(--main-color-light) !important;
   color: white !important;
 }
- /* ====================== Lista de elementos educacion ========================*/
 
- .list-group{
-  border: none;
- }
- .list-group-item {
-  border: none;
- }
+/* ====================== Lista de elementos educacion ========================*/
 
+.list-group {
+  border: none;
+}
+.list-group-item {
+  border: none;
+}
 
 /* ====================== Titulo ========================*/
 
@@ -74,7 +78,6 @@
   --webkit-background-clip: text !important;
   --webkit-text-fill-color: transparent !important;
   opacity: 0.1;
-
 
 }
 

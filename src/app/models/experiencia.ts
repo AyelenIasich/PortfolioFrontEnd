@@ -1,28 +1,28 @@
-export class Educacion {
+export class Experiencia {
   id?: number;
   nombre: string;
   inicio: number;
   fin: number;
-  titulo: string;
+  modalidad: string;
   lugar: string;
   imagen: string;
-  modalidad: string;
+  descripcion: string;
 
   constructor(
     nombre: string,
     inicio: number,
     fin: number,
+    modalidad: string,
     lugar: string,
-    titulo: string,
     imagen: string,
-    modalidad: string
+    descripcion: string
   ) {
     this.nombre = nombre;
     this.inicio = inicio;
     this.fin = fin;
-    this.lugar = lugar;
-    this.titulo = titulo;
-    this.imagen = imagen;
     this.modalidad = modalidad;
+    this.lugar = lugar;
+    this.imagen = imagen;
+    this.descripcion = descripcion;
   }
 }

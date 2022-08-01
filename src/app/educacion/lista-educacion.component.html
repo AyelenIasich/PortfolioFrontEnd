@@ -1,24 +1,25 @@
-<div class="container">
-  <div class="row align-items-center">
+<div class="container" id="listaEducacion">
+  <div class="text-center mb-3 mt-2">
+    <h1 class="section-title-01 text-center display-4">Skills</h1>
+    <h2 class="section-title-02 text-center display-6">Skills</h2>
+  </div>
+  <div class="row mt-1">
     <div class="col-12 text-center p-4">
       <h2>Formación</h2>
     </div>
     <div class="col mb-2">
-      <button type="button" class="btn btn-outline-success" routerLink="/nuevo">
+      <button
+        type="button"
+        class="btn btn-outline-inicio"
+        routerLink="/educacion"
+      >
         <i class="fa-solid fa-plus"></i> Nuevo
       </button>
     </div>
-    <div class="col-12 justify-text-center">
-      <ul
-        class="list-group"
-        cdkDropList
-        (cdkDropListDropped)="onDropped($event)"
-      >
-        <li
-          class="p-0 list-group-item"
-          *ngFor="let educacion of ListaEducacion"
-          cdkDrag
-        >
+  </div>
+  <div class="row row-cols-2 align-items-center ">
+    <div class="col justify-text-center " *ngFor="let educacion of ListaEducacion">
+
           <div class="card mb-1">
             <div class="row g-0">
               <div class="col-3 align-self-center text-center">
@@ -41,27 +42,28 @@
                   <p class="card-text">
                     {{ educacion.lugar }}
                   </p>
-                  <div class=" col-md-6 offset-md-6 col-lg-4 offset-lg-8 col-xxl-3 offset-xxl-9">
+                  <div
+                    class="col-md-6 offset-md-6 col-lg-4 offset-lg-8 col-xxl-3 offset-xxl-9"
+                  >
                     <button
-                      class="btn btn-outline-warning "
-                      routerLink="/editar/{{ educacion.id }}"
-                    >
-                      <i class="fa-solid fa-pen"></i>
-                      Editar
-                    </button>
-                    <button
-                      class="btn btn-outline-danger ms-2"
+                      class="btn btn-outline-eliminar"
                       (click)="borrar(educacion.id)"
                     >
                       <i class="fa-solid fa-trash-can"></i> Eliminar
+                    </button>
+                    <button
+                      class="btn btn-outline-editar ms-2"
+                      routerLink="/educacion/{{ educacion.id }}"
+                    >
+                      <i class="fa-solid fa-pen"></i>
+                      Editar
                     </button>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </li>
-      </ul>
+
     </div>
   </div>
 </div>

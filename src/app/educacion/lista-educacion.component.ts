@@ -26,8 +26,11 @@ export class ListaEducacionComponent implements OnInit {
     this.educacionService.lista().subscribe(
       data => {
         this.ListaEducacion = data;
+      },
+      err => {
+        console.log(err);
       }
-    )
+    );
   }
 
   borrar(id: number){
@@ -36,10 +39,10 @@ export class ListaEducacionComponent implements OnInit {
         this.toastr.success('Producto Eliminado', 'OK', { timeOut: 3000});
         this.cargarListaEducacion();
       }, err => {
-        this.toastr.error(err.error.message, 'Fail', { timeOut: 3000});
+        this.toastr.error(err.error.mensaje, 'Fail', { timeOut: 3000});
 
       }
-    )
+    );
   }
 
   onDropped(event:CdkDragDrop<any>){
