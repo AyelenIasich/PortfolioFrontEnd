@@ -11,10 +11,10 @@ import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'nuevo', component: NuevoEducacionComponent },
-  { path: 'nuevoexperiencia', component: NuevoExperienciaComponent },
-  { path: 'editar/:id', component: EditarEducacionComponent },
-  { path: 'editarexperiencia/:id', component: EditarExperienciaComponent },
+  { path: 'educacion', component: NuevoEducacionComponent },
+  { path: 'experiencia', component: NuevoExperienciaComponent },
+  { path: 'educacion/:id', component: EditarEducacionComponent },
+  { path: 'experiencia/:id', component: EditarExperienciaComponent },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 

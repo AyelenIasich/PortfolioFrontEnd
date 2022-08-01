@@ -37,10 +37,10 @@ export class ListaExperienciaComponent implements OnInit {
         this.toastr.success('Experiencia Eliminada', 'OK', { timeOut: 3000});
         this.cargarListaExperiencia();
       }, err => {
-        this.toastr.error(err.error.message, 'Fail', { timeOut: 3000});
+        this.toastr.error(err.error.mensaje, 'Fail', { timeOut: 3000});
 
       }
-    )
+    );
   }
 
 

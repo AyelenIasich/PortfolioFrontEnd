@@ -63,3 +63,44 @@
   border: none;
  }
 
+
+/* ====================== Titulo ========================*/
+
+.section-title-01 {
+  font-weight: 800;
+
+  margin-bottom: 2rem;
+  background: linear-gradient(to top, transparent 0%, var(--first-color) 70%);
+  --webkit-background-clip: text !important;
+  --webkit-text-fill-color: transparent !important;
+  opacity: 0.1;
+
+
+}
+
+.section-title-02 {
+
+  font-weight: 700;
+  transform: translateY(-65px);
+  position: relative;
+}
+
+.section-title-02::before {
+  content: " ";
+  position: absolute;
+  bottom: 0;
+  height: 5px;
+  width: 70px;
+  background-color: var(--main-color-light);
+}
+
+
+@media screen and (max-width: 730px){
+  .section-title-01{
+    font-size:3em;
+  }
+  .section-title-02{
+    font-size:2em;
+    transform:  translateY(-65px);
+  }
+}
