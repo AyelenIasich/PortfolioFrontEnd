@@ -1,3 +1,5 @@
+
+
 <div class="container" id="listaEducacion">
   <div class="text-center mb-3 mt-2">
     <h1 class="section-title-01 text-center display-4">Skills</h1>
@@ -12,8 +14,9 @@
         type="button"
         class="btn btn-outline-inicio"
         routerLink="/educacion"
+        *ngIf="isAdmin"
       >
-        <i class="fa-solid fa-plus"></i> Nuevo
+        <i class="fa-solid fa-plus" ></i> Nuevo
       </button>
     </div>
   </div>
@@ -46,16 +49,19 @@
                     class="col-md-6 offset-md-6 col-lg-4 offset-lg-8 col-xxl-3 offset-xxl-9"
                   >
                     <button
+                    *ngIf="isAdmin"
                       class="btn btn-outline-eliminar"
                       (click)="borrar(educacion.id)"
+
                     >
-                      <i class="fa-solid fa-trash-can"></i> Eliminar
+                      <i class="fa-solid fa-trash-can" ></i> Eliminar
                     </button>
                     <button
                       class="btn btn-outline-editar ms-2"
                       routerLink="/educacion/{{ educacion.id }}"
+                      *ngIf="isAdmin"
                     >
-                      <i class="fa-solid fa-pen"></i>
+                      <i class="fa-solid fa-pen" *ngIf="isAdmin"></i>
                       Editar
                     </button>
                   </div>

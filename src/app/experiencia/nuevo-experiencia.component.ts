@@ -47,7 +47,7 @@ export class NuevoExperienciaComponent implements OnInit {
         this.toastr.error(err.error.mensaje, 'Fail', {
           timeOut: 3000
         });
-        this.router.navigate(['/']);
+
 
       }
     );

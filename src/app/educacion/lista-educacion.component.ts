@@ -3,6 +3,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Educacion } from '../models/educacion';
 import { EducacionService } from '../service/educacion.service';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+import { TokenService } from '../service/token.service';
 
 @Component({
   selector: 'app-lista-educacion',
@@ -13,14 +14,29 @@ export class ListaEducacionComponent implements OnInit {
 
   ListaEducacion: Educacion[] = [];
 
+roles: string[];
+isAdmin = false;
+
+
+
+
   constructor(
     private educacionService: EducacionService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private tokenService: TokenService
   ) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.cargarListaEducacion();
+    this.roles = this.tokenService.getAuthorities();
+    this.roles.forEach(rol => {
+      if (rol === 'ROLE_ADMIN') {
+        this.isAdmin = true;
+      }
+    });
   }
+
+
 
   cargarListaEducacion():void {
     this.educacionService.lista().subscribe(
@@ -36,7 +52,7 @@ export class ListaEducacionComponent implements OnInit {
   borrar(id: number){
     this.educacionService.delete(id).subscribe(
       data => {
-        this.toastr.success('Producto Eliminado', 'OK', { timeOut: 3000});
+        this.toastr.success('Lista de educación eliminada', 'OK', { timeOut: 3000});
         this.cargarListaEducacion();
       }, err => {
         this.toastr.error(err.error.mensaje, 'Fail', { timeOut: 3000});
