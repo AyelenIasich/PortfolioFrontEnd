@@ -12,12 +12,10 @@ import { TokenService } from '../service/token.service';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  isLogged = false;
-  isLoginFail = false;
   loginUsuario: LoginUsuario;
   nombreUsuario: string;
   password: string;
-  roles: string[] = [];
+
   errMsj: string;
 
   constructor(
@@ -27,35 +25,23 @@ export class LoginComponent implements OnInit {
     private toastr: ToastrService
   ) {}
 
-  // comprobamos si estamos logeados
   ngOnInit() {
-    if (this.tokenService.getToken()) {
-      this.isLogged = true;
-      this.isLoginFail = false;
-      this.roles = this.tokenService.getAuthorities();
-    }
+    this.nombreUsuario = this.tokenService.getUserName();
   }
 
   onLogin(): void {
     this.loginUsuario = new LoginUsuario(this.nombreUsuario, this.password);
     this.authService.login(this.loginUsuario).subscribe(
       (data) => {
-        this.isLogged = true;
-        this.isLoginFail = false;
-
         this.tokenService.setToken(data.token);
-        this.tokenService.setUserName(data.nombreUsuario);
-        this.tokenService.setAuthorities(data.authorities);
-        this.roles = data.authorities;
-        this.toastr.success('Bienvenido/a ' + data.nombreUsuario, 'OK', {
+
+        this.toastr.success('Bienvenido/a ' + this.nombreUsuario, 'OK', {
           timeOut: 3000,
           positionClass: 'toast-top-center',
         });
         this.router.navigate(['/']);
       },
       (err) => {
-        this.isLogged = false;
-        this.isLoginFail = true;
         this.errMsj = err.error.message;
         this.toastr.error(this.errMsj, 'Contraseña o usuario incorrecto', {
           timeOut: 3000,

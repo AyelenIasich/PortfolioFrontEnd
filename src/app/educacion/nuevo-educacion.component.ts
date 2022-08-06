@@ -48,7 +48,6 @@ export class NuevoEducacionComponent implements OnInit {
         this.toastr.error(err.error.mensaje, 'Fail', {
           timeOut: 3000
         });
-
       }
     );
   }

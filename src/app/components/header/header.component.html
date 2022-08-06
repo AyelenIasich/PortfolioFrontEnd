@@ -87,30 +87,30 @@
           /></a>
         </div>
 
-        <!-- <button
+        <button
           type="button"
           *ngIf="!isLogged"
           routerLink="/login"
           class="btn btn-sm btn-outline-login px-2 fs-6 d-sm-none d-md-none d-lg-none d-xl-inline-block"
         >
-          Login in
+          <i class="fas fa-sign-in-alt"></i> Iniciar Sesión
         </button>
         <button
-        type="button"
-        *ngIf="isLogged" (click)="onLogOut()"
-        style="cursor: pointer;"
-        class="btn btn-sm btn-outline-login px-2 fs-6 d-sm-none d-md-none d-lg-none d-xl-inline-block"
-      >
-        Login out
-      </button> -->
+          type="button"
+          *ngIf="isLogged"
+          (click)="onLogOut()"
+          style="cursor: pointer"
+          class="btn btn-sm btn-outline-login px-2 fs-6 d-sm-none d-md-none d-lg-none d-xl-inline-block"
+        >
+          <i class="fas fa-door-open"></i> Cerrar Sesión
+        </button>
 
-      <li class="nav-item login fs-6 p-0 d-xl-inline-block " *ngIf="!isLogged">
+        <!-- <li class="nav-item login fs-6 p-0 d-xl-inline-block " *ngIf="!isLogged">
         <a class="nav-link"  routerLink="/login"><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</a>
       </li>
       <li class="nav-item login fs-6 p-0 d-xl-inline-block " *ngIf="isLogged" (click)="onLogOut()">
         <a class="nav-link" style="cursor: pointer;"><i class="fas fa-door-open" ></i> Cerrar Sesión</a>
-      </li>
-
+      </li> -->
       </ul>
     </div>
   </div>
