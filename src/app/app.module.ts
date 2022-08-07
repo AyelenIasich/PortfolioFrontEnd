@@ -20,7 +20,6 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './auth/login.component';
 import { RegistroComponent } from './auth/registro.component';
 import { MenuComponent } from './menu/menu.component';
-import { IndexComponent } from './index/index.component';
 import { interceptorProvider } from './interceptors/edu-interceptor.service';
 
 
@@ -48,7 +47,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     LoginComponent,
     RegistroComponent,
     MenuComponent,
-    IndexComponent,
+
 
   ],
   imports: [

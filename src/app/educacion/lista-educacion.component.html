@@ -1,18 +1,16 @@
 
 
-<div class="container" id="listaEducacion">
+<div class="container mt-5" id="listaEducacion">
   <div class="text-center mb-3 mt-2">
-    <h1 class="section-title-01 text-center display-4">Skills</h1>
-    <h2 class="section-title-02 text-center display-6">Skills</h2>
+    <h1 class="section-title-01 text-center display-4">Educación</h1>
+    <h2 class="section-title-02 text-center display-6">Educación</h2>
   </div>
   <div class="row mt-1">
-    <div class="col-12 text-center p-4">
-      <h2>Formación</h2>
-    </div>
+
     <div class="col mb-2">
       <button
         type="button"
-        class="btn btn-outline-inicio"
+        class="btn btn-outline-inicio mb-3"
         routerLink="/educacion"
         *ngIf="isAdmin"
       >
@@ -20,12 +18,12 @@
       </button>
     </div>
   </div>
-  <div class="row row-cols-2 align-items-center ">
-    <div class="col justify-text-center " *ngFor="let educacion of ListaEducacion">
-
-          <div class="card mb-1">
+  <div class="row row-cols-lg-2 align-items-center ">
+    <div class="col-12 justify-text-center mb-3" *ngFor="let educacion of ListaEducacion">
+      <!-- style="min-height: 180px; max-height: 220px;" -->
+          <div class="card" >
             <div class="row g-0">
-              <div class="col-3 align-self-center text-center">
+              <div class="col-3 align-self-center text-center ps-1" >
                 <img
                   src="{{ educacion.imagen }}"
                   class="img-fluid rounded-start"
@@ -33,20 +31,20 @@
                 />
               </div>
               <div class="col-9">
-                <div class="card-body">
-                  <h5 class="card-title">{{ educacion.nombre }}</h5>
-                  <p class="card-text">
+                <div class="card-body" >
+                  <h5 class="card-title mt-2 ">{{ educacion.nombre }}</h5>
+                  <p class="card-text mb-1">
                     <time>{{ educacion.inicio }}</time> -
                     <time>{{ educacion.fin }}</time>
                   </p>
-                  <p class="card-text">
+                  <p class="card-text mb-0 titulo mt-3 ">
                     {{ educacion.titulo }}
                   </p>
-                  <p class="card-text">
-                    {{ educacion.lugar }}
+                  <p class="card-text pt-0 mt-2">
+                    {{ educacion.modalidad }} {{ educacion.descripcion }}  <a target="_blank" aria-label="Ir a url de la credencial"  cursor="pointer" href="{{ educacion.url}}">{{ educacion.titleUrl }}</a>
                   </p>
                   <div
-                    class="col-md-6 offset-md-6 col-lg-4 offset-lg-8 col-xxl-3 offset-xxl-9"
+                    class="col-md-6 offset-md-6 col-lg-4 offset-lg-8 col-xxl-7 offset-xxl-5"
                   >
                     <button
                     *ngIf="isAdmin"
@@ -57,7 +55,7 @@
                       <i class="fa-solid fa-trash-can" ></i> Eliminar
                     </button>
                     <button
-                      class="btn btn-outline-editar ms-2"
+                      class="btn btn-outline-editar ps-4 pe-4 ms-2"
                       routerLink="/educacion/{{ educacion.id }}"
                       *ngIf="isAdmin"
                     >
