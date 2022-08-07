@@ -64,12 +64,12 @@
 }
  /* ====================== Lista de elementos educacion ========================*/
 
- .list-group{
+ /* .list-group{
   border: none;
  }
  .list-group-item {
   border: none;
- }
+ } */
 
 
 /* ====================== Titulo ========================*/
@@ -102,6 +102,39 @@
   background-color: var(--main-color-light);
 }
 
+@media screen and (min-width: 1201px){
+  .card{
+    min-height: 200px!important;
+    align-self: center!important;
+
+  }
+.body-tarjeta{
+  min-height: 200px!important;
+  align-items: center!important;
+}
+}
+
+@media screen and (min-width: 992px) and (max-width:1200px){
+  .body-tarjeta{
+  min-height: 170px;
+  }
+  .card{
+    min-height: 170px;
+  }
+
+
+h5{
+  font-size:1em!important;
+  font-weight: 600!important;
+}
+p{
+  font-size:0.8em!important;
+}
+.titulo{
+  font-size:0.9em!important;
+}
+
+}
 
 @media screen and (max-width: 730px){
   .section-title-01{
@@ -115,9 +148,30 @@
     font-size:1.2em;
     font-weight: 600!important;
   }
-  /* p{
+  p{
+    font-size:0.8em!important;
+  }
+  .titulo{
+    font-size:0.9em!important;
+  }
+}
+
+@media screen and (max-width: 445px){
+  .section-title-01{
+    font-size:3em;
+  }
+  .section-title-02{
     font-size:2em;
-  } */
+    transform:  translateY(-65px);
+  }
+  h5{
+    font-size:1em;
+    font-weight: 600!important;
+  }
+
+  .titulo{
+    font-size:0.9em!important;
+  }
 }
 
 /* ====================== cards  ========================*/

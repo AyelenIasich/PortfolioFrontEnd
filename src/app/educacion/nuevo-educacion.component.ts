@@ -35,7 +35,6 @@ export class NuevoEducacionComponent implements OnInit {
       this.fin,
       this.titulo,
       this.imagen,
-
       this.url,
       this.titleUrl,
       this.modalidad,
