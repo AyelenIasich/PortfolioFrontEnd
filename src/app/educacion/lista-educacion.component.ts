@@ -8,60 +8,49 @@ import { TokenService } from '../service/token.service';
 @Component({
   selector: 'app-lista-educacion',
   templateUrl: './lista-educacion.component.html',
-  styleUrls: ['./lista-educacion.component.css']
+  styleUrls: ['./lista-educacion.component.css'],
 })
 export class ListaEducacionComponent implements OnInit {
-
   ListaEducacion: Educacion[] = [];
-
-roles: string[];
-isAdmin = false;
-
-
-
+  isAdmin = false;
 
   constructor(
     private educacionService: EducacionService,
     private toastr: ToastrService,
     private tokenService: TokenService
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.cargarListaEducacion();
-    this.roles = this.tokenService.getAuthorities();
-    this.roles.forEach(rol => {
-      if (rol === 'ROLE_ADMIN') {
-        this.isAdmin = true;
-      }
-    });
+    this.isAdmin = this.tokenService.isAdmin();
   }
 
-
-
-  cargarListaEducacion():void {
+  cargarListaEducacion(): void {
     this.educacionService.lista().subscribe(
-      data => {
+      (data) => {
         this.ListaEducacion = data;
       },
-      err => {
+      (err) => {
         console.log(err);
       }
     );
   }
 
-  borrar(id: number){
+  borrar(id: number) {
     this.educacionService.delete(id).subscribe(
-      data => {
-        this.toastr.success('Lista de educación eliminada', 'OK', { timeOut: 3000});
+      (data) => {
+        this.toastr.success('Lista de educación eliminada', 'OK', {
+          timeOut: 3000,
+        });
         this.cargarListaEducacion();
-      }, err => {
-        this.toastr.error(err.error.mensaje, 'Fail', { timeOut: 3000});
-
+      },
+      (err) => {
+        this.toastr.error(err.error.mensaje, 'Fail', { timeOut: 3000 });
       }
     );
   }
 
-  onDropped(event:CdkDragDrop<any>){
+  onDropped(event: CdkDragDrop<any>) {
     console.log(event);
     const anterior = event.previousIndex;
     const actual = event.currentIndex;

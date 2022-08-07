@@ -1,3 +1,11 @@
+:root{
+  --card-bg-color: #fff;
+  --main-color-light: #6a59d1;
+  --third-color:#757575;
+  --box-shadow:0px 0px 20px rgb( 0 0 0 / 10%);
+  --first-color: #0e2431;
+}
+
 
 /* =================== Boton de Nuevo ================= */
 
@@ -103,4 +111,49 @@
     font-size:2em;
     transform:  translateY(-65px);
   }
+  h5{
+    font-size:1.2em;
+    font-weight: 600!important;
+  }
+  /* p{
+    font-size:2em;
+  } */
 }
+
+/* ====================== cards  ========================*/
+
+.card{
+  background: var(--card-bg-color) ;
+ box-shadow: 0 5px 10px -5px rgba(0 0 0 / 30%);
+  border-bottom:4px solid  var(--main-color-light) ;
+  border-radius: 6px;
+  transition: .3s ease;
+}
+
+
+p {
+
+  color:#757575;
+  font-weight: 500;
+  /* font-size: 0.9rem; */
+
+
+
+}
+
+h5{
+  color: var(--first-color);
+  font-weight: 500;
+
+}
+
+.titulo{
+  color:   #504f4f;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+.card-text a{
+  color: #6a59d1;
+}
+
+
