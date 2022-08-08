@@ -23,6 +23,7 @@ export class ListaEducacionComponent implements OnInit {
   ngOnInit(): void {
     this.cargarListaEducacion();
     this.isAdmin = this.tokenService.isAdmin();
+ this.canDrag();
   }
 
   cargarListaEducacion(): void {
@@ -56,4 +57,10 @@ export class ListaEducacionComponent implements OnInit {
     const actual = event.currentIndex;
     moveItemInArray(this.ListaEducacion, anterior, actual);
   }
+
+  canDrag() {
+    return this.isAdmin === false;
+  }
+
+
 }

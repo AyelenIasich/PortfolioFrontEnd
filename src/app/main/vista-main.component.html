@@ -1,0 +1,64 @@
+<main id="main">
+  <div class="overlay">
+    <div class="container-fluid p-0">
+      <div class="row align-items-md-end row-overlay">
+        <div class="col-sm-12 col-md-6 p-0">
+          <div class="bg-main-left d-none d-md-block">
+            <img src="assets/Formas/main-left.svg" />
+          </div>
+        </div>
+        <div class="col-sm-12 align-self-end text-end col-md-6 text-md-end p-0">
+          <div class="bg-main-right">
+            <img src="assets/Formas/main-right.svg" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container main">
+    <div class="row align-items-center justify-content-center">
+      <div class="col order-2 col-md-6 intro pb-5 pb-lg-0">
+        <div class="info ms-2">
+          <h2 class="display-2 mt-2">
+            <span id="firstName">{{persona.nombre}}</span>
+            {{persona.apellido}}
+          </h2>
+          <h3 class="lh-sm"> {{persona.titulo}}</h3>
+          <p class="fs-6 lh-base">
+            {{persona.descripcionMain}}
+          </p>
+          <a href="../../../assets/AyeléIasichCV.pdf" download="AyelénIasichCV.pdf"
+          target="_blank" class="btn btn-primary">Descargar CV</a><button
+          class="btn btn-outline-editar ps-4 pe-4 ms-2"
+          routerLink="/persona/{{ persona.id }}"
+          *ngIf="isAdmin"
+        >
+          <i class="fa-solid fa-pen"></i>
+          Editar
+        </button>
+
+        </div>
+
+      </div>
+      <div class="col-md-6 align-self-center order-md-2">
+        <div class="text-center">
+          <img
+            src="{{persona.imagenMain}}"
+            alt="Imagen de Desarrolladora"
+            class="aye-img"
+          />
+        </div>
+      </div>
+      <div
+        class="col-12 order-3 scroll-down text-center align-self-start d-none d-md-block"
+      >
+        <a href="#skills " class="fs-6"
+          >Scroll Down
+
+          <img src="assets/Icons/ScrollDownicon.svg" alt="" />
+        </a>
+      </div>
+    </div>
+  </div>
+
+</main>

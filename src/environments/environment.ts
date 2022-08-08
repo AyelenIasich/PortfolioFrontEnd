@@ -5,7 +5,9 @@
 export const environment = {
   production: false,
   educacionURL : 'http://localhost:8090/educacion/',
-  authURL : 'http://localhost:8090/auth/'
+  authURL : 'http://localhost:8090/auth/',
+  personaURL : 'http://localhost:8090/persona/',
+  aboutURL: 'http://localhost:8090/about/'
 };
 
 /*

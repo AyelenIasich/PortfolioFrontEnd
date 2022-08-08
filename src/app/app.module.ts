@@ -19,7 +19,7 @@ import { EditarExperienciaComponent } from './experiencia/editar-experiencia.com
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './auth/login.component';
 import { RegistroComponent } from './auth/registro.component';
-import { MenuComponent } from './menu/menu.component';
+
 import { interceptorProvider } from './interceptors/edu-interceptor.service';
 
 
@@ -29,6 +29,7 @@ import { interceptorProvider } from './interceptors/edu-interceptor.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { EditarMainComponent } from './main/editar-main.component';
 
 
 
@@ -46,7 +47,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     HomeComponent,
     LoginComponent,
     RegistroComponent,
-    MenuComponent,
+    EditarMainComponent,
+
 
 
   ],

@@ -9,11 +9,18 @@ import { EduGuardService } from './guards/edu-guard.service';
 import { NuevoExperienciaComponent } from './experiencia/nuevo-experiencia.component';
 import { HomeComponent } from './home/home.component';
 import { LoginGuard } from './guards/login.guard';
+import { EditarMainComponent } from './main/editar-main.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent, canActivate: [LoginGuard] },
   { path: 'registro', component: RegistroComponent, canActivate: [LoginGuard] },
+  {
+    path: 'persona/:id',
+    component: EditarMainComponent,
+    canActivate: [EduGuardService],
+    data: { expectedRol: ['admin'] },
+  },
   {
     path: 'educacion',
     component: NuevoEducacionComponent,

@@ -1,0 +1,203 @@
+/* =================== Colors Variables =====================*/
+
+/*  Scroll Bar Colors */
+::root{
+--scroll-thumb-color: #70768a;
+--scroll-bar-color: #c5cadf;
+--scroll-thumb-hover-color: #454f6b;
+
+/*  main theme color */
+
+--main-color-light: #6a59d1;
+--main-color-dark: #7c6cd9;
+--link-navbar-color: #757575;
+
+/* text colors */
+
+--grey-text-modo-light: #757575;
+
+/* / body bg colors */
+
+--body-bg-color: #fefefe;
+
+}
+
+/* =============== Media queries ================*/
+
+
+
+/* Main */
+@media (max-width: 560px) {
+  .bg-main-right img {
+  width: 75%!important;
+  height: 55%!important;
+  opacity: 45%;
+
+}
+}
+
+/* ========================  Overlay =======================*/
+
+#main {
+  position: relative;
+}
+
+.overlay {
+  bottom: 0;
+  left: 0;
+  top: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+
+}
+
+.row-overlay {
+  width: 100%;
+}
+
+.overlay .container-fluid,
+.overlay .row {
+  height: 100%;
+}
+
+.bg-main-right img {
+  width: 45%;
+}
+
+.bg-main-left img {
+  width: 40%;
+}
+
+
+/* =====================  End Overlay =======================*/
+
+/* ===================== Main ===============================*/
+
+.main .info .display-2 {
+  font-weight: 600!important;
+
+
+}
+main {
+
+  height: 90vh;
+  background-color: var(--body-bg-color);
+  opacity: 0.9;
+}
+
+main .container,
+main .row {
+
+  height:100%
+}
+
+main .intro {
+  color: #0e2431;
+}
+
+
+#firstName {
+  color:var(--main-color-light);
+  text-transform: uppercase;
+  font-weight: 300!important;
+}
+
+
+.main .info p {
+  max-width: 450px;
+  color:var(--grey-text-modo-light);
+  font-weight: 500;
+
+}
+
+.aye-img {
+  width: 80%;
+  transform: translate(0, 0);
+}
+
+/* =============== button Download CV =======================*/
+
+.main .btn-primary {
+  border: none;
+  color: white !important;
+  font-weight: 500;
+
+  box-shadow: inset 0 0 0 0 rgb(203, 114, 194) !important;
+  transition: ease-out 0.5s;
+  background: rgb(203, 114, 194);
+  background: linear-gradient(
+    53deg,
+    rgba(203, 114, 194, 1) 0%,
+    rgba(143, 116, 212, 1) 56%,
+    rgba(106, 89, 209, 1) 100%
+  );
+}
+
+main .btn-primary:hover {
+  box-shadow: inset 300px 0 0 0 rgb(203, 114, 194) !important;
+}
+
+/* =============== End button Download CV ===================*/
+/*=================== Scroll-down ========================== */
+
+main .col-12  {
+  max-height: 25px!important;
+ }
+
+ main .scroll-down{
+   height: 100%;
+ }
+
+ .scroll-down a {
+   color:var(--grey-text-modo-light);
+   font-weight: 600;
+   text-decoration: none;
+ }
+
+ .scroll-down a:hover {
+  color:var(--main-color-light);
+ }
+
+ .scroll-down img {
+   width: 1em;
+   animation: arrow-down ease 2s infinite;
+   color:var(--main-color-light);
+ }
+
+ @keyframes arrow-down {
+   0% {
+     transform: translateY(0);
+   }
+   30% {
+     transform: translateY(10px);
+   }
+ }
+/* =============== End Scroll-down ===================*/
+/* =================== Boton de Editar ================= */
+.btn-outline-editar:hover {
+  box-shadow: inset 300px 0 0 0 rgb(203, 114, 194) !important;
+}
+
+.btn-outline-editar{
+  border: none;
+  color: white !important;
+  font-weight: 500;
+
+  box-shadow: inset 0 0 0 0 rgb(203, 114, 194) !important;
+  transition: ease-out 0.5s;
+  background: rgb(203, 114, 194);
+  background: linear-gradient(
+    53deg,
+    rgba(203, 114, 194, 1) 0%,
+    rgba(143, 116, 212, 1) 56%,
+    rgba(106, 89, 209, 1) 100%
+  );
+}
+
+.btn-outline-inicio:hover {
+  box-shadow: inset 300px 0 0 0 rgb(203, 114, 194) !important;
+}
+
+
+/*=================== End main ========================== */

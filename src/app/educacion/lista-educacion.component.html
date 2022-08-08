@@ -1,9 +1,9 @@
 <div class="container mt-5" id="listaEducacion">
-  <div class="text-center mt-2 ">
+  <div class="text-center mt-2">
     <h1 class="section-title-01 text-center display-4">Educación</h1>
     <h2 class="section-title-02 text-center display-6">Educación</h2>
   </div>
-  <div class="row  ">
+  <div class="row">
     <div class="col mb-2">
       <button
         type="button"
@@ -15,15 +15,17 @@
       </button>
     </div>
   </div>
-  <div class="row  row-cols-lg-2 ">
+  <div class="row row-cols-lg-2"  cdkDropList
+  (cdkDropListDropped)="onDropped($event)"  >
     <div
       class="col-12 justify-text-center mb-3"
       *ngFor="let educacion of ListaEducacion"
+
     >
-    <!-- style="min-height: 200px" -->
-      <div class="card  p-0 m-0" >
+      <!-- style="min-height: 200px" -->
+      <div class="card p-0 m-0" cdkDrag [cdkDragDisabled]="canDrag()" [cdkDragStartDelay]="1000" cdkDragPreviewContainer="parent" >
         <!-- style="min-height: 200px;" -->
-        <div class="row g-0 body-tarjeta  " >
+        <div class="row g-0 body-tarjeta" >
           <div
             class="col-3 align-self-center justify-content-center text-center ps-1"
           >
@@ -34,7 +36,7 @@
             />
           </div>
           <div class="col-9 align-self-center">
-            <div class="card-body ">
+            <div class="card-body">
               <h5 class="card-title mt-2">{{ educacion.nombre }}</h5>
               <p class="card-text mb-1">
                 <time>{{ educacion.inicio }}</time> -
@@ -61,7 +63,7 @@
         >
           <button
             *ngIf="isAdmin"
-            class="btn btn-outline-eliminar "
+            class="btn btn-outline-eliminar"
             (click)="borrar(educacion.id)"
           >
             <i class="fa-solid fa-trash-can"></i> Eliminar
