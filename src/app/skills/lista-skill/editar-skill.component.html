@@ -1,0 +1,108 @@
+<app-header></app-header>
+<div id="editarSkill">
+  <div class="container-fluid background"></div>
+  <div class="container">
+    <div class="row pt-4 pb-5">
+      <div class="col-10 col-md-7 col-lg-5 mx-auto form p-4 mb-5">
+        <form
+          name="formEducacion "
+          (ngSubmit)="f.form.valid && onUpdate()"
+          novalidate
+          #f="ngForm"
+        >
+          <div class="row mt-1">
+            <div class="align-self-center mb-3 mt-2">
+              <h1 class="title h4">Editar Skill</h1>
+            </div>
+          </div>
+          <div class="form-group mb-3 mt-2">
+            <label class="mb-2" for="skill">Nombre de la Skill</label>
+            <input
+              placeholder="CSS"
+              type="text"
+              class="form-control"
+              id="skill"
+              name="skill"
+              [(ngModel)]="skill.skill"
+              required
+              #skillInput="ngModel"
+              [ngClass]="{
+                'is-invalid':
+                  skillInput.touched || (f.submitted && skillInput.invalid)
+              }"
+              [ngClass]="{
+                'is-valid': skillInput.touched && skillInput.valid
+              }"
+            />
+            <div class="invalid-feedback">Este campo es requerido.</div>
+          </div>
+
+          <div class="form-group mb-4">
+            <label class="mb-2" for="porcentaje"
+              >Nivel de habilidad en porcentaje (0 - 100)</label
+            >
+            <input
+              placeholder="85"
+              min="0"
+              max="100"
+              type="number"
+              class="form-control"
+              id="porcentaje"
+              name="porcentaje"
+              [(ngModel)]="skill.porcentaje"
+              required
+              #porcentajeInput="ngModel"
+              [ngClass]="{
+                'is-invalid':
+                  porcentajeInput.touched ||
+                  (f.submitted && porcentajeInput.invalid)
+              }"
+              [ngClass]="{
+                'is-valid': porcentajeInput.touched && porcentajeInput.valid
+              }"
+            />
+            <div class="invalid-feedback">Este campo es requerido.<br> *Recuerde que el porcentaje debe comprender del 0 al 100.</div>
+          </div>
+          <div class="form-group mb-4">
+            <label class="mb-2" for="urlLogo">Url de la imagen</label>
+            <input
+              placeholder="https://ibb.co/qCMkTyp"
+              type="text"
+              class="form-control"
+              id="urlLogo"
+              name="urlLogo"
+              [(ngModel)]="skill.urlLogo"
+              required
+              #urlLogoInput="ngModel"
+              [ngClass]="{
+                'is-invalid':
+                  urlLogoInput.touched || (f.submitted && urlLogoInput.invalid)
+              }"
+              [ngClass]="{
+                'is-valid': urlLogoInput.touched && urlLogoInput.valid
+              }"
+            />
+            <div class="invalid-feedback">Este campo es requerido.</div>
+          </div>
+
+          <div class="row justify-content-center align-items-center mb-3 pt-2">
+            <div class="col-6">
+              <button
+                type="button"
+                class="btn btn-outline-volver col-6"
+                routerLink="/"
+              >
+                <i class="fa-solid fa-angle-left"></i> Volver
+              </button>
+            </div>
+            <div class="col-6">
+              <button class="btn btn-outline-success col-6 pt-2">
+                <i class="fa-solid fa-pen-to-square"></i> Guardar
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

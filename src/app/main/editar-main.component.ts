@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Persona } from '../models/persona';
-import { ExperienciaService } from '../service/experiencia.service';
+
 import { PersonaService } from '../service/persona.service';
 
 @Component({
@@ -11,7 +11,7 @@ import { PersonaService } from '../service/persona.service';
   styleUrls: ['./editar-main.component.css'],
 })
 export class EditarMainComponent implements OnInit {
-  persona: Persona = null;
+  persona: Persona = {};
 
   constructor(
     private personaService: PersonaService,

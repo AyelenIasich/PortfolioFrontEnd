@@ -1,0 +1,160 @@
+<app-header></app-header>
+<div id="about-descripcion">
+  <div class="container-fluid background"></div>
+  <div class="container pt-5">
+    <div class="row pt-4 pb-5 align-items-center about">
+      <div class="col-10 col-md-7 col-lg-5 mx-auto form p-4 mb-5">
+        <form
+          name="formAbout "
+          (ngSubmit)="f.form.valid && onUpdate()"
+          novalidate
+          #f="ngForm"
+        >
+          <div class="row mt-1">
+            <div class="align-self-center mb-3 mt-2">
+              <h1 class="title h4">Editar sobre mí</h1>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12">
+              <div class="form-group mb-4">
+                <label class="mb-2" for="tituloAbout">Título</label>
+
+                <input
+                  placeholder="Bienvenidos, mi nombre es ..."
+                  type="text"
+                  class="form-control"
+                  id="tituloAbout"
+                  name="tituloAbout"
+                  [(ngModel)]="about.tituloAbout"
+                  required
+                  #tituloAboutInput="ngModel"
+                  [ngClass]="{
+                    'is-invalid':
+                      tituloAboutInput.touched ||
+                      (f.submitted && tituloAboutInput.invalid)
+                  }"
+                  [ngClass]="{
+                    'is-valid':
+                      tituloAboutInput.touched && tituloAboutInput.valid
+                  }"
+                />
+                <div class="invalid-feedback">Este campo es requerido.</div>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <div class="form-group mb-4">
+                <label class="mb-2" for="subtituloAbout">Subtítulo</label>
+
+                <input
+                  placeholder="Bienvenidos, mi nombre es ..."
+                  type="text"
+                  class="form-control"
+                  id="subtituloAbout"
+                  name="subtituloAbout"
+                  [(ngModel)]="about.subtituloAbout"
+                  required
+                  #subtituloAboutInput="ngModel"
+                  [ngClass]="{
+                    'is-invalid':
+                      subtituloAboutInput.touched ||
+                      (f.submitted && subtituloAboutInput.invalid)
+                  }"
+                  [ngClass]="{
+                    'is-valid':
+                      subtituloAboutInput.touched && subtituloAboutInput.valid
+                  }"
+                />
+                <div class="invalid-feedback">Este campo es requerido.</div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group mb-4">
+              <label class="mb-2" for="descripcionAbout">Descripción</label>
+              <textarea
+                type="text"
+                class="form-control descripcion"
+                name="descripcionAbout"
+                id="descripcionAbout"
+                cols="30"
+                rows="4"
+                [(ngModel)]="about.descripcionAbout"
+                required
+                #descripcionAboutInput="ngModel"
+                [ngClass]="{
+                  'is-invalid':
+                    descripcionAboutInput.touched ||
+                    (f.submitted && descripcionAboutInput.invalid)
+                }"
+                [ngClass]="{
+                  'is-valid':
+                    descripcionAboutInput.touched && descripcionAboutInput.valid
+                }"
+              ></textarea>
+              <div class="invalid-feedback">Este campo es requerido.</div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="form-group mb-4">
+              <label class="mb-2" for="parrafoAbout"
+                >Párrafo 2 (opcional)</label
+              >
+              <textarea
+                type="text"
+                class="form-control descripcion"
+                name="parrafoAbout"
+                id="parrafoAbout"
+                cols="30"
+                rows="4"
+                [(ngModel)]="about.parrafoAbout"
+                #parrafoAboutInput="ngModel"
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="form-group mb-4">
+              <label class="mb-2" for="parrafo2About"
+                >Párrafo 3 (opcional)</label
+              >
+              <textarea
+                type="text"
+                class="form-control descripcion"
+                name="parrafo2About"
+                id="parrafo2About"
+                cols="30"
+                rows="4"
+                [(ngModel)]="about.parrafo2About"
+                #parrafoAboutInput="ngModel"
+              ></textarea>
+            </div>
+          </div>
+
+
+
+          <div class="row justify-content-center align-items-center mb-3 pt-2">
+            <div class="col-6">
+              <button
+                type="button"
+                class="btn btn-outline-volver col-6"
+
+                routerLink="../educacion/lista-educacion.component.html#educacion"
+              >
+                <i class="fa-solid fa-angle-left"></i> Volver
+              </button>
+            </div>
+            <div class="col-6">
+              <button class="btn btn-outline-success col-6 pt-2">
+                <i class="fa-solid fa-pen-to-square"></i> Guardar
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

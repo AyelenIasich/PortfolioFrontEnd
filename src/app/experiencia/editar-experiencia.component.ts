@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { Experiencia } from '../models/experiencia';
-import { ExperienciaService } from '../service/experiencia.service';
+import { Trabajo } from '../models/trabajo';
+import { TrabajoService } from '../service/trabajo.service';
 
 @Component({
   selector: 'app-editar-experiencia',
@@ -10,10 +10,10 @@ import { ExperienciaService } from '../service/experiencia.service';
   styleUrls: ['./editar-experiencia.component.css'],
 })
 export class EditarExperienciaComponent implements OnInit {
-  experiencia: Experiencia = null;
+  trabajo: Trabajo = null;
 
   constructor(
-    private experienciaService: ExperienciaService,
+    private trabajoService:TrabajoService,
     private activatedRoute: ActivatedRoute,
     private toastr: ToastrService,
     private router: Router
@@ -21,9 +21,9 @@ export class EditarExperienciaComponent implements OnInit {
 
   ngOnInit() {
     const id = this.activatedRoute.snapshot.params['id'];
-    this.experienciaService.detail(id).subscribe(
+    this.trabajoService.detail(id).subscribe(
       (data) => {
-        this.experiencia = data;
+        this.trabajo = data;
       },
       (err) => {
         this.toastr.error(err.error.message, 'Fail', { timeOut: 3000 });
@@ -33,7 +33,7 @@ export class EditarExperienciaComponent implements OnInit {
   }
   onUpdate(): void {
     const id = this.activatedRoute.snapshot.params['id'];
-    this.experienciaService.update(id, this.experiencia).subscribe(
+    this.trabajoService.update(id, this.trabajo).subscribe(
       (data) => {
         this.toastr.success('Experiencia actualizada', 'OK', {
           timeOut: 3000,

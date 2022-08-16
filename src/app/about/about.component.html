@@ -1,0 +1,67 @@
+<section id="about" class=" mt-md-5">
+  <div class="container mt-5 pt-5 mb-5 pb-5">
+    <div class="row mt-sm-5 mt-md-3 mb-5">
+      <div class="col-12 mt-sm-5">
+        <div class="text-center mt-2">
+          <h1 class="section-title-01 text-center display-4">Sobre mí</h1>
+          <h2 class="section-title-02 text-center display-6">Sobre mí</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row align-self-center mb-5">
+      <div class="col-12 col-md-5 align-self-center text-center ">
+        <div class="about-img">
+          <div class="row">
+            <div class="col-12 text-end">
+
+              <button class="btn btn-outline-editar"  routerLink="/about/{{ about.id }}" *ngIf="isAdmin"  >
+                <i class="fa-solid fa-pen"></i>
+              </button>
+            </div>
+          </div>
+
+          <img [src]="about.imagenAbout" alt="" />
+        </div>
+      </div>
+      <div class="col-12 col-md-7 about-info">
+        <div class="row description ms-3 me-3">
+          <div class="col-12 mb-3 mt-3 ">
+            <div class="row align-items-center " >
+              <div class="col-12 text-end">
+                <button
+                  class="btn btn-outline-editar"
+                  *ngIf="isAdmin"
+                  routerLink="/aboutdescription/{{ about.id }}"
+
+                >
+
+                  <i class="fa-solid fa-pen"></i>
+                </button>
+              </div>
+            </div>
+
+            <h3 >{{ about.tituloAbout }}</h3>
+          </div>
+          <div class="col-12 mb-3  ">
+            <h4 >
+              {{ about.subtituloAbout }}
+            </h4>
+            <hr class="h">
+          </div>
+          <div class="col-12 mb-4 fs-6 mt-3">
+            <p class="fs-6 lh-lg">
+              {{ about.descripcionAbout }}
+
+            </p >
+            <p class="fs-6 lh-lg">
+              {{ about.parrafoAbout }}
+            </p>
+            <p class="fs-6 lh-lg">
+              {{ about.parrafo2About }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

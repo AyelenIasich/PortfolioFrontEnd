@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { Educacion } from '../models/educacion';
 import { EducacionService } from '../service/educacion.service';
-import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { TokenService } from '../service/token.service';
 
 @Component({
@@ -23,7 +22,7 @@ export class ListaEducacionComponent implements OnInit {
   ngOnInit(): void {
     this.cargarListaEducacion();
     this.isAdmin = this.tokenService.isAdmin();
- this.canDrag();
+
   }
 
   cargarListaEducacion(): void {
@@ -51,16 +50,6 @@ export class ListaEducacionComponent implements OnInit {
     );
   }
 
-  onDropped(event: CdkDragDrop<any>) {
-    console.log(event);
-    const anterior = event.previousIndex;
-    const actual = event.currentIndex;
-    moveItemInArray(this.ListaEducacion, anterior, actual);
-  }
-
-  canDrag() {
-    return this.isAdmin === false;
-  }
 
 
 }

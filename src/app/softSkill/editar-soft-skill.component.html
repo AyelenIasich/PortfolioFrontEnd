@@ -1,0 +1,109 @@
+<app-header></app-header>
+<div id="editarSoftSkill">
+  <div class="container-fluid background"></div>
+  <div class="container">
+    <div class="row pt-4 pb-5">
+      <div class="col-10 col-md-7 col-lg-5 mx-auto form p-4 mb-5">
+        <form
+          name="formEducacion "
+          (ngSubmit)="f.form.valid && onUpdate()"
+          novalidate
+          #f="ngForm"
+        >
+          <div class="row mt-1">
+            <div class="align-self-center mb-3 mt-2">
+              <h1 class="title h4">Editar soft skill</h1>
+            </div>
+          </div>
+          <div class="form-group mb-3 mt-2">
+            <label class="mb-2" for="softSkill">Nombre de la Skill</label>
+            <input
+              placeholder="CSS"
+              type="text"
+              class="form-control"
+              id="softSkill"
+              name="softSkill"
+              [(ngModel)]="softSkill.softSkill"
+              required
+              #softSkillInput="ngModel"
+              [ngClass]="{
+                'is-invalid':
+                softSkillInput.touched || (f.submitted && softSkillInput.invalid)
+              }"
+              [ngClass]="{
+                'is-valid': softSkillInput.touched && softSkillInput.valid
+              }"
+            />
+            <div class="invalid-feedback">Este campo es requerido.</div>
+          </div>
+
+          <div class="form-group mb-4">
+            <label class="mb-2" for="porcentajeSoft"
+              >Nivel de habilidad en porcentaje (0 - 100)</label
+            >
+            <input
+              placeholder="85"
+              min="0"
+              max="100"
+              type="number"
+              class="form-control"
+              id="porcentajeSoft"
+              name="porcentajeSoft"
+              [(ngModel)]="softSkill.porcentajeSoft"
+              required
+              #porcentajeSoftInput="ngModel"
+              [ngClass]="{
+                'is-invalid':
+                porcentajeSoftInput.touched ||
+                  (f.submitted && porcentajeSoftInput.invalid)
+              }"
+              [ngClass]="{
+                'is-valid': porcentajeSoftInput.touched && porcentajeSoftInput.valid
+              }"
+            />
+            <div class="invalid-feedback">Este campo es requerido.<br> *Recuerde que el porcentaje debe comprender del 0 al 100.</div>
+          </div>
+          <div class="form-group mb-4">
+            <label class="mb-2" for="urlSoft">Url de la imagen</label>
+            <input
+              placeholder="https://ibb.co/qCMkTyp"
+              type="text"
+              class="form-control"
+              id="urlSoft"
+              name="urlSoft"
+              [(ngModel)]="softSkill.urlSoft"
+              required
+              #urlSoftInput="ngModel"
+              [ngClass]="{
+                'is-invalid':
+                urlSoftInput.touched || (f.submitted && urlSoftInput.invalid)
+              }"
+              [ngClass]="{
+                'is-valid': urlSoftInput.touched && urlSoftInput.valid
+              }"
+            />
+            <div class="invalid-feedback">Este campo es requerido.</div>
+          </div>
+
+          <div class="row justify-content-center align-items-center mb-3 pt-2">
+            <div class="col-6">
+              <button
+                type="button"
+                class="btn btn-outline-volver col-6"
+                routerLink="/"
+              >
+                <i class="fa-solid fa-angle-left"></i> Volver
+              </button>
+            </div>
+            <div class="col-6">
+              <button class="btn btn-outline-success col-6 pt-2">
+                <i class="fa-solid fa-pen-to-square"></i> Guardar
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+

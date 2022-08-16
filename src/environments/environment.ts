@@ -7,7 +7,10 @@ export const environment = {
   educacionURL : 'http://localhost:8090/educacion/',
   authURL : 'http://localhost:8090/auth/',
   personaURL : 'http://localhost:8090/persona/',
-  aboutURL: 'http://localhost:8090/about/'
+  aboutURL: 'http://localhost:8090/about/',
+  trabajoURL: 'http://localhost:8090/trabajo/',
+  skillURL: 'http://localhost:8090/skill/',
+  softSkillURL: 'http://localhost:8090/softskill/'
 };
 
 /*

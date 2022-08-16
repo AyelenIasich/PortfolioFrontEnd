@@ -1,12 +1,15 @@
-:root {
+:root{
+  --card-bg-color: #fff;
+  --main-color-light: #6a59d1;
+  --third-color:#757575;
+  --box-shadow:0px 0px 20px rgb( 0 0 0 / 10%);
   --first-color: #0e2431;
-  --second-color: #6a59d1;
-  --third-color: #777;
 }
+
 
 /* =================== Boton de Nuevo ================= */
 
-.btn-outline-inicio {
+.btn-outline-inicio{
   border: none;
   color: white !important;
   font-weight: 500;
@@ -22,12 +25,13 @@
   );
 }
 
+
 /* =================== Boton de Editar ================= */
 .btn-outline-editar:hover {
   box-shadow: inset 300px 0 0 0 rgb(203, 114, 194) !important;
 }
 
-.btn-outline-editar {
+.btn-outline-editar{
   border: none;
   color: white !important;
   font-weight: 500;
@@ -49,7 +53,7 @@
 
 /* =================== Boton de Borrar ================= */
 
-.btn-outline-eliminar {
+.btn-outline-eliminar{
   border-color: var(--main-color-light) !important;
   color: var(--main-color-light) !important;
   font-weight: 500 !important;
@@ -57,15 +61,6 @@
 .btn-outline-eliminar:hover {
   background-color: var(--main-color-light) !important;
   color: white !important;
-}
-
-/* ====================== Lista de elementos educacion ========================*/
-
-.list-group {
-  border: none;
-}
-.list-group-item {
-  border: none;
 }
 
 /* ====================== Titulo ========================*/
@@ -78,6 +73,7 @@
   --webkit-background-clip: text !important;
   --webkit-text-fill-color: transparent !important;
   opacity: 0.1;
+
 
 }
 
@@ -97,18 +93,38 @@
   background-color: var(--main-color-light);
 }
 
+@media screen and (min-width: 1399px){
+  .card{
+    min-height: 250px!important;
+    align-self: center!important;
 
-
-
-
-@media screen and (max-width: 730px){
-  .section-title-01{
-    font-size:2.8em!important;
   }
-  .section-title-02{
-    font-size:2em!important;
-    transform:  translateY(-65px);
+.body-tarjeta{
+  min-height: 250px!important;
+  align-items: center!important;
+}
+}
+
+@media screen and (min-width: 992px) and (max-width:1200px){
+  .body-tarjeta{
+  min-height: 210px!important;
   }
+  .card{
+    min-height: 210px!important;
+  }
+
+
+h5{
+  font-size:1em!important;
+  font-weight: 600!important;
+}
+p{
+  font-size:0.8em!important;
+}
+.titulo{
+  font-size:0.9em!important;
+}
+
 }
 
 @media screen and (max-width: 730px){
@@ -119,4 +135,97 @@
     font-size:2em;
     transform:  translateY(-65px);
   }
+  h5{
+    font-size:1.2em;
+    font-weight: 600!important;
+  }
+  p{
+    font-size:0.8em!important;
+  }
+  .titulo{
+    font-size:0.9em!important;
+  }
 }
+
+@media screen and (max-width: 445px){
+  .section-title-01{
+    font-size:3em;
+  }
+  .section-title-02{
+    font-size:2em;
+    transform:  translateY(-65px);
+  }
+  h5{
+    font-size:1em;
+    font-weight: 600!important;
+  }
+
+  .titulo{
+    font-size:0.9em!important;
+  }
+}
+
+@media screen and (min-width: 200px) and (max-width: 313px){
+  .section-title-01{
+    font-size:2em!important;
+  }
+  .section-title-02{
+    font-size:1.6em;
+    transform:  translateY(-51px);
+  }
+
+}
+
+
+
+/* ====================== cards  ========================*/
+
+.card{
+  background-color: var(--card-bg-color) ;
+ box-shadow: 0 5px 10px -5px rgba(0 0 0 / 30%);
+  border-bottom:4px solid  var(--main-color-light) ;
+  border-radius: 6px;
+  transition: .3s ease;
+
+}
+
+
+p {
+
+  color:#757575;
+  font-weight: 500;
+  /* font-size: 0.9rem; */
+
+
+
+}
+
+h5{
+  color: var(--first-color);
+  font-weight: 500;
+
+}
+
+.titulo{
+  color:   #504f4f;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.subtitulo {
+  color:   #504f4f;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.descripcion{
+
+  font-size: 1rem;
+    font-weight: 500;
+}
+
+.card-text a{
+  color: #6a59d1;
+}
+
+

@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
-import { Experiencia } from '../models/experiencia';
-import { ExperienciaService } from '../service/experiencia.service';
-import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
-
+import { Trabajo } from '../models/trabajo';
+import { TokenService } from '../service/token.service';
+import { TrabajoService } from '../service/trabajo.service';
 
 @Component({
   selector: 'app-lista-experiencia',
@@ -11,45 +10,35 @@ import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
   styleUrls: ['./lista-experiencia.component.css'],
 })
 export class ListaExperienciaComponent implements OnInit {
-  ListaExperiencia: Experiencia[] = [];
+  ListaTrabajo: Trabajo[] = [];
+  isAdmin = false;
 
   constructor(
-    private experienciaService: ExperienciaService,
-    private toastr: ToastrService
+    private trabajoService: TrabajoService,
+    private toastr: ToastrService,
+    private tokenService: TokenService
   ) {}
 
   ngOnInit() {
     this.cargarListaExperiencia();
-
+    this.isAdmin = this.tokenService.isAdmin();
   }
 
-  cargarListaExperiencia(){
-    this.experienciaService.lista().subscribe(
-      data => {
-        this.ListaExperiencia = data;
-      }
-    )
+  cargarListaExperiencia() {
+    this.trabajoService.lista().subscribe((data) => {
+      this.ListaTrabajo = data;
+    });
   }
 
-  borrar(id: number){
-    this.experienciaService.delete(id).subscribe(
-      data => {
-        this.toastr.success('Experiencia Eliminada', 'OK', { timeOut: 3000});
+  borrar(id: number) {
+    this.trabajoService.delete(id).subscribe(
+      (data) => {
+        this.toastr.success('Experiencia Eliminada', 'OK', { timeOut: 3000 });
         this.cargarListaExperiencia();
-      }, err => {
-        this.toastr.error(err.error.mensaje, 'Fail', { timeOut: 3000});
-
+      },
+      (err) => {
+        this.toastr.error(err.error.mensaje, 'Fail', { timeOut: 3000 });
       }
     );
   }
-
-
-  onDropped(event:CdkDragDrop<any>){
-    console.log(event);
-    const anterior = event.previousIndex;
-    const actual = event.currentIndex;
-    moveItemInArray(this.ListaExperiencia, anterior, actual);
-  }
-
-
 }

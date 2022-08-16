@@ -1,83 +1,81 @@
-<div class="container mt-5" id="listaEducacion">
-  <div class="text-center mt-2">
-    <h1 class="section-title-01 text-center display-4">Educación</h1>
-    <h2 class="section-title-02 text-center display-6">Educación</h2>
-  </div>
-  <div class="row">
-    <div class="col mb-2">
-      <button
-        type="button"
-        class="btn btn-outline-inicio mb-3"
-        routerLink="/educacion"
-        *ngIf="isAdmin"
-      >
-        <i class="fa-solid fa-plus"></i> Nuevo
-      </button>
+<section id="educacion">
+  <div class="container mt-5" id="listaEducacion">
+    <div class="text-center mt-2">
+      <h1 class="section-title-01 text-center display-4">Educación</h1>
+      <h2 class="section-title-02 text-center display-6">Educación</h2>
     </div>
-  </div>
-  <div class="row row-cols-lg-2"  cdkDropList
-  (cdkDropListDropped)="onDropped($event)"  >
-    <div
-      class="col-12 justify-text-center mb-3"
-      *ngFor="let educacion of ListaEducacion"
-
-    >
-      <!-- style="min-height: 200px" -->
-      <div class="card p-0 m-0" cdkDrag [cdkDragDisabled]="canDrag()" [cdkDragStartDelay]="1000" cdkDragPreviewContainer="parent" >
-        <!-- style="min-height: 200px;" -->
-        <div class="row g-0 body-tarjeta" >
-          <div
-            class="col-3 align-self-center justify-content-center text-center ps-1"
-          >
-            <img
-              src="{{ educacion.imagen }}"
-              class="img-fluid rounded-start"
-              alt="..."
-            />
-          </div>
-          <div class="col-9 align-self-center">
-            <div class="card-body">
-              <h5 class="card-title mt-2">{{ educacion.nombre }}</h5>
-              <p class="card-text mb-1">
-                <time>{{ educacion.inicio }}</time> -
-                <time>{{ educacion.fin }}</time>
-              </p>
-              <p class="card-text mb-0 titulo mt-3">
-                {{ educacion.titulo }}
-              </p>
-              <p class="card-text pt-0 mt-2">
-                {{ educacion.modalidad }} {{ educacion.descripcion }}
-                <a
-                  target="_blank"
-                  aria-label="Ir a url de la credencial"
-                  cursor="pointer"
-                  href="{{ educacion.url }}"
-                  >{{ educacion.titleUrl }}</a
-                >
-              </p>
+    <div class="row">
+      <div class="col mb-2">
+        <button
+          type="button"
+          class="btn btn-outline-inicio mb-3"
+          routerLink="/educacion"
+          *ngIf="isAdmin"
+        >
+          <i class="fa-solid fa-plus"></i> Nuevo
+        </button>
+      </div>
+    </div>
+    <div class="row row-cols-lg-2">
+      <div
+        class="col-12 justify-text-center mb-3"
+        *ngFor="let educacion of ListaEducacion"
+      >
+        <div class="card p-0 m-0">
+          <div class="row g-0 body-tarjeta">
+            <div
+              class="col-3 align-self-center justify-content-center text-center ps-1"
+            >
+              <img
+                src="{{ educacion.imagen }}"
+                class="img-fluid rounded-start"
+                alt="..."
+              />
+            </div>
+            <div class="col-9 align-self-center">
+              <div class="card-body">
+                <h5 class="card-title mt-2">{{ educacion.nombre }}</h5>
+                <p class="card-text mb-1">
+                  <time>{{ educacion.inicio }}</time> -
+                  <time>{{ educacion.fin }}</time>
+                </p>
+                <p class="card-text mb-0 titulo mt-3">
+                  {{ educacion.titulo }}
+                </p>
+                <p class="card-text pt-0 mt-2">
+                  {{ educacion.modalidad }} {{ educacion.descripcion }}
+                  <a
+                    target="_blank"
+                    aria-label="Ir a url de la credencial"
+                    cursor="pointer"
+                    href="{{ educacion.url }}"
+                    >{{ educacion.titleUrl }}</a
+                  >
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-        <div
-          class="col-sm-8 offset-sm-3 col-md-5 offset-md-7 col-lg-7 offset-lg-5 col-xl-6 offset-xl-6 col-xxl-5 offset-xxl-7 mb-3 ps-1 align-self-center"
-        >
-          <button
-            *ngIf="isAdmin"
-            class="btn btn-outline-eliminar"
-            (click)="borrar(educacion.id)"
+          <div
+            class="col-sm-8 offset-sm-3 col-md-5 offset-md-7 col-lg-7 offset-lg-5 col-xl-6 offset-xl-6 col-xxl-5 offset-xxl-7 mb-3 ps-1 align-self-center"
           >
-            <i class="fa-solid fa-trash-can"></i> Eliminar
-          </button>
-          <button
-            class="btn btn-outline-editar ps-4 pe-4 ms-2"
-            routerLink="/educacion/{{ educacion.id }}"
-            *ngIf="isAdmin"
-          >
-            <i class="fa-solid fa-pen"></i>
-            Editar
-          </button>
+            <button
+              *ngIf="isAdmin"
+              class="btn btn-outline-eliminar"
+              (click)="borrar(educacion.id)"
+            >
+              <i class="fa-solid fa-trash-can"></i> Eliminar
+            </button>
+            <button
+              class="btn btn-outline-editar ps-4 pe-4 ms-2"
+              routerLink="/educacion/{{ educacion.id }}"
+              *ngIf="isAdmin"
+            >
+              <i class="fa-solid fa-pen"></i>
+              Editar
+            </button>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+</section>

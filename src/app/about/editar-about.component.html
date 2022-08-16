@@ -1,0 +1,68 @@
+<app-header></app-header>
+<div id="about">
+  <div class="container-fluid background"></div>
+  <div class="container pt-5">
+    <div class="row pt-4 pb-5 align-items-center about" >
+      <div class="col-10 col-md-7 col-lg-5 mx-auto form p-4 mb-5">
+        <form
+          name="formAbout "
+          (ngSubmit)="f.form.valid && onUpdate()"
+          novalidate
+          #f="ngForm"
+        >
+          <div class="row mt-1">
+            <div class="align-self-center mb-3 mt-2">
+              <h1 class="title h4">Editar sobre mí</h1>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <div class="form-group mb-4">
+                <label class="mb-2" for="imagenAbout">Url de la imagen</label>
+
+                <input
+                  placeholder="https://ibb.co/qCMkTyp"
+                  type="text"
+                  class="form-control"
+                  id="imagenAbout"
+                  name="imagenAbout"
+                  [(ngModel)]="about.imagenAbout"
+                  required
+                  #imagenAboutInput="ngModel"
+                  [ngClass]="{
+                    'is-invalid':
+                      imagenAboutInput.touched ||
+                      (f.submitted && imagenAboutInput.invalid)
+                  }"
+                  [ngClass]="{
+                    'is-valid':
+                      imagenAboutInput.touched && imagenAboutInput.valid
+                  }"
+                />
+                <div class="invalid-feedback">Este campo es requerido.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row justify-content-center align-items-center mb-3 pt-2">
+            <div class="col-6">
+              <button
+                type="button"
+                class="btn btn-outline-volver col-6"
+                routerLink="/"
+              >
+                <i class="fa-solid fa-angle-left"></i> Volver
+              </button>
+            </div>
+            <div class="col-6">
+              <button class="btn btn-outline-success col-6 pt-2">
+                <i class="fa-solid fa-pen-to-square"></i> Guardar
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

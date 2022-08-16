@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Experiencia } from '../models/experiencia';
-import { ExperienciaService } from '../service/experiencia.service';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import { Trabajo } from '../models/trabajo';
+import { TrabajoService } from '../service/trabajo.service';
 
 @Component({
   selector: 'app-nuevo-experiencia',
@@ -11,44 +11,40 @@ import { Router } from '@angular/router';
   styleUrls: ['./nuevo-experiencia.component.css'],
 })
 export class NuevoExperienciaComponent implements OnInit {
-  nombre: string = '';
-  inicio: number;
-  fin: number;
-  lugar: string = '';
-  titulo: string = '';
-  imagen: string = '';
-  descripcion: string = '';
-  modalidad: string = '';
+  tituloTrab: string = '';
+  inicioTrab: number;
+  finTrab: number;
+  descripcionTrab: string = '';
+  urlTrab: string = '';
+  direccionTrab: string = '';
+
 
   constructor(
-    private experienciaService: ExperienciaService,
+    private trabajoService: TrabajoService,
     private toastr: ToastrService,
     private router: Router
   ) {}
 
   onCreate(): void {
-    const experiencia = new Experiencia(
-      this.nombre,
-      this.inicio,
-      this.fin,
-      this.modalidad,
-      this.lugar,
-      this.imagen,
-      this.descripcion
+    const trabajo = new Trabajo(
+      this.direccionTrab,
+      this.tituloTrab,
+      this.inicioTrab,
+      this.finTrab,
+      this.descripcionTrab,
+      this.urlTrab
     );
-    this.experienciaService.save(experiencia).subscribe(
+    this.trabajoService.save(trabajo).subscribe(
       (data) => {
         this.toastr.success('Nueva lista de experiencia creada', 'OK', {
-          timeOut: 3000
+          timeOut: 3000,
         });
         this.router.navigate(['/']);
       },
       (err) => {
         this.toastr.error(err.error.mensaje, 'Fail', {
-          timeOut: 3000
+          timeOut: 3000,
         });
-
-
       }
     );
   }

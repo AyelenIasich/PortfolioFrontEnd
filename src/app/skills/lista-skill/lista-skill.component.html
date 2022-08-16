@@ -1,0 +1,77 @@
+<section id="skill" >
+  <div class="container mt-5 pt-5 mb-5 pb-5" >
+    <div class="text-center mt-2">
+      <h1 class="section-title-01 text-center display-4">Skills</h1>
+      <h2 class="section-title-02 text-center display-6">Skills</h2>
+    </div>
+    <div class="row mb-5 ">
+      <div class="col-7 col-sm-6 col-md-5  col-lg-4 col-xl-3 text-center ms-1">
+        <div class="skills-title pt-2 pb-1 mb-2 ">
+          <h3 class="h4">Frontend & Backend</h3>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col mb-4">
+        <button
+          type="button"
+          class="btn btn-outline-inicio mb-3"
+          routerLink="/skill"
+          *ngIf="isAdmin"
+        >
+          <i class="fa-solid fa-plus"></i> Nuevo
+        </button>
+      </div>
+    </div>
+    <div class="row row-cols-sm-4 row-cols-md-3 row-cols-lg-4  row-cols-xl-5 mb-5">
+      <div class="col-4 justify-text-center"  *ngFor="let skill of ListaSkill">
+       <div class="row">
+        <div class="col text-center titulo-skills mb-2 mt-5"><h3>{{skill.skill}}</h3></div>
+       </div>
+        <div>
+          <circle-progress
+            [percent]="skill.porcentaje"
+            [radius]="100"
+            [showUnits]="false"
+            [responsive]="true"
+            [showSubtitle]="false"
+            [backgroundGradientStopColor]="'transparent'"
+            [title]="skill.skill"
+            [titleColor]="'#757575'"
+            [titleFontSize]="'1em'"
+            [outerStrokeWidth]="10"
+            [innerStrokeWidth]="4"
+            [outerStrokeColor]="'#7c6cd9'"
+            [innerStrokeColor]="'#7c6cd9'"
+            [animation]="true"
+            [animationDuration]="500"
+            [showImage]="true"
+            [imageSrc]="skill.urlLogo"
+            [imageHeight]="60"
+            [imageWidth]="60"
+          ></circle-progress>
+        </div>
+        <div class="row">
+          <div class="text-center">
+            <button
+              class="btn btn-outline-eliminar"
+              (click)="borrar(skill.id)"
+              *ngIf="isAdmin"
+            >
+              <i class="fa-solid fa-trash-can"> </i>
+            </button>
+
+            <button
+              class="btn btn-outline-editar ms-2"
+              routerLink="/skill/{{ skill.id }}"
+              *ngIf="isAdmin"
+            >
+              <i class="fa-solid fa-pen"> </i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>

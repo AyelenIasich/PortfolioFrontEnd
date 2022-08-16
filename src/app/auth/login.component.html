@@ -1,5 +1,6 @@
 <app-header></app-header>
-
+<section id="login" ></section>
+<div class="container-fluid background"></div>
 <div class="container d-flex justify-content-center mt-5">
   <div class="card">
     <div class="card-header">
@@ -13,7 +14,7 @@
       </ul>
     </div>
     <div class="card-body">
-      <form #f="ngForm" (ngSubmit)="onLogin()" novalidate>
+      <form #f="ngForm" (ngSubmit)="f.form.valid && onLogin()" novalidate>
         <div class="form-group">
           <label for="nombreUsuario">Nombre de Usuario</label>
           <input
@@ -23,7 +24,19 @@
             class="form-control"
             [(ngModel)]="nombreUsuario"
             required
+            #nombreUsuarioInput="ngModel"
+            [ngClass]="{
+              'is-invalid':
+                nombreUsuarioInput.touched ||
+                (f.submitted && nombreUsuarioInput.invalid)
+            }"
+            [ngClass]="{
+              'is-valid':
+                nombreUsuarioInput.touched && nombreUsuarioInput.valid
+            }"
           />
+          <div class="invalid-feedback">Este campo es requerido.</div>
+
         </div>
         <div class="form-group">
           <label for="password">Contraseña</label>
@@ -34,12 +47,33 @@
             class="form-control"
             [(ngModel)]="password"
             required
+
+            #nombreUsuarioInput="ngModel"
+            [ngClass]="{
+              'is-invalid':
+                nombreUsuarioInput.touched ||
+                (f.submitted && nombreUsuarioInput.invalid)
+            }"
+            [ngClass]="{
+              'is-valid':
+                nombreUsuarioInput.touched && nombreUsuarioInput.valid
+            }"
+
           />
+          <div class="invalid-feedback">Este campo es requerido.</div>
+
         </div>
-        <div class="form-group mt-3">
+        <div class="form-group mt-3 d-grid gap-2 d-md-flex justify-content-md-center">
           <button
-            class="btn btn-outline-success btn-block"
-            [disabled]="!f.valid"
+          class="btn btn-primary me-md-2"
+          type="button"
+          class="btn btn-outline-volver"
+          routerLink="/"
+        >
+          <i class="fa-solid fa-angle-left"></i> Volver
+        </button>
+          <button
+            class="btn btn-outline-ingresar btn-block"
           >
             <i class="fas fa-sign-in-alt"></i> Iniciar Sesión
           </button>
@@ -48,3 +82,4 @@
     </div>
   </div>
 </div>
+

@@ -20,30 +20,33 @@
       <div class="col order-2 col-md-6 intro pb-5 pb-lg-0">
         <div class="info ms-2">
           <h2 class="display-2 mt-2">
-            <span id="firstName">{{persona.nombre}}</span>
-            {{persona.apellido}}
+            <span id="firstName">{{ persona.nombre }}</span>
+            {{ persona.apellido }}
           </h2>
-          <h3 class="lh-sm"> {{persona.titulo}}</h3>
+          <h3 class="lh-sm">{{ persona.titulo }}</h3>
           <p class="fs-6 lh-base">
-            {{persona.descripcionMain}}
+            {{ persona.descripcionMain }}
           </p>
-          <a href="../../../assets/AyeléIasichCV.pdf" download="AyelénIasichCV.pdf"
-          target="_blank" class="btn btn-primary">Descargar CV</a><button
-          class="btn btn-outline-editar ps-4 pe-4 ms-2"
-          routerLink="/persona/{{ persona.id }}"
-          *ngIf="isAdmin"
-        >
-          <i class="fa-solid fa-pen"></i>
-          Editar
-        </button>
-
+          <a
+            href="../../../assets/cvdownload/Ayelén_Iasich_CV.pdf"
+            download="AyelénIasichCV.pdf"
+            target="_blank"
+            class="btn btn-primary"
+            >Descargar CV</a
+          ><button
+            class="btn btn-outline-editar ps-4 pe-4 ms-2"
+            routerLink="/persona/{{ persona.id }}"
+            *ngIf="isAdmin"
+          >
+            <i class="fa-solid fa-pen"></i>
+            Editar Main
+          </button>
         </div>
-
       </div>
       <div class="col-md-6 align-self-center order-md-2">
         <div class="text-center">
           <img
-            src="{{persona.imagenMain}}"
+            [src]="persona.imagenMain"
             alt="Imagen de Desarrolladora"
             class="aye-img"
           />
@@ -52,7 +55,7 @@
       <div
         class="col-12 order-3 scroll-down text-center align-self-start d-none d-md-block"
       >
-        <a href="#skills " class="fs-6"
+        <a href="#about " class="fs-6"
           >Scroll Down
 
           <img src="assets/Icons/ScrollDownicon.svg" alt="" />
@@ -60,5 +63,4 @@
       </div>
     </div>
   </div>
-
 </main>
