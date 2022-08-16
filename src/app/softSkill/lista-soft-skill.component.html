@@ -19,10 +19,10 @@
         </button>
       </div>
     </div>
-    <div class="row row-cols-sm-4 row-cols-md-3 row-cols-lg-4  row-cols-xl-5 mb-5">
-      <div class="col-4 justify-text-center"  *ngFor="let softSkill of ListaSoftSkill">
+    <div class="row row-cols-sm-4 row-cols-md-3 row-cols-lg-4  row-cols-xl-4 mb-5">
+      <div class="col-4  ps-md-4 pe-md-4  justify-text-center"  *ngFor="let softSkill of ListaSoftSkill">
        <div class="row">
-        <div class="col text-center titulo-skills mb-2 mt-5"><h3>{{softSkill.softSkill}}</h3></div>
+        <div class="col text-center titulo-skills mb-2 mt-5"><h3 class="h5">{{softSkill.softSkill}}</h3></div>
        </div>
         <div>
           <circle-progress
@@ -43,8 +43,8 @@
             [animationDuration]="500"
             [showImage]="true"
             [imageSrc]="softSkill.urlSoft"
-            [imageHeight]="60"
-            [imageWidth]="60"
+            [imageHeight]="80"
+            [imageWidth]="80"
           ></circle-progress>
         </div>
         <div class="row">

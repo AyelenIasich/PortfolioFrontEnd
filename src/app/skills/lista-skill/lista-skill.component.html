@@ -23,10 +23,10 @@
         </button>
       </div>
     </div>
-    <div class="row row-cols-sm-4 row-cols-md-3 row-cols-lg-4  row-cols-xl-5 mb-5">
-      <div class="col-4 justify-text-center"  *ngFor="let skill of ListaSkill">
+    <div class="row row-cols-sm-4 row-cols-md-3 row-cols-lg-4  row-cols-xl-4 mb-5">
+      <div class="col-4 ps-sm-3 pe-sm-3 ps-md-5 pe-md-5 justify-text-center"  *ngFor="let skill of ListaSkill">
        <div class="row">
-        <div class="col text-center titulo-skills mb-2 mt-5"><h3>{{skill.skill}}</h3></div>
+        <div class="col text-center titulo-skills mb-2 mt-5"><h3 class="h5">{{skill.skill}}</h3></div>
        </div>
         <div>
           <circle-progress

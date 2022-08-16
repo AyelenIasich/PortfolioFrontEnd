@@ -36,6 +36,31 @@
 }
 }
 
+/* ========================  Banner =======================*/
+.banner{
+  height: 100vh!important;
+  width: 100%;
+  position: absolute;
+  z-index: -4;
+
+
+}
+.img-banner {
+  height: 100vh!important;
+  width: 100%;
+
+}
+
+img[src=""],
+img:not([src]){
+  opacity: 0;
+}
+
+img[src="*"]{
+  opacity: 1;
+}
+
+
 /* ========================  Overlay =======================*/
 
 #main {
