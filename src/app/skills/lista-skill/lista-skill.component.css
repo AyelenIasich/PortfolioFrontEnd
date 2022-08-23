@@ -88,24 +88,10 @@
   background-color: var(--main-color-light);
 }
 
-@media screen and (min-width: 1399px) {
-  .card {
-    /* min-height: 250px!important; */
-    align-self: center !important;
-  }
-  .body-tarjeta {
-    /* min-height: 250px!important; */
-    align-items: center !important;
-  }
-}
+
 
 @media screen and (min-width: 993px) and (max-width: 1200px) {
-  /* .body-tarjeta{
-  min-height: 210px!important;
-  }
-  .card{
-    min-height: 210px!important;
-  } */
+
 
   h5 {
     font-size: 1em !important;

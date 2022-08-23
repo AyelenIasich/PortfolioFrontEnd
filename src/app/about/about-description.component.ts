@@ -30,9 +30,7 @@ export class AboutDescriptionComponent implements OnInit {
         this.toastr.success('Sobre mi actualizado', 'OK', {
           timeOut: 3000,
         });
-
-
-        this.router.navigate(['/' ]);
+        window.location.href='/#about';
       },
       (err) => {
         this.toastr.error(err.error.mensaje, 'Fail', {

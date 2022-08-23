@@ -37,6 +37,10 @@ import { EditarSkillComponent } from './skills/lista-skill/editar-skill.componen
 import { EditarSoftSkillComponent } from './softSkill/editar-soft-skill.component';
 import { ListaSoftSkillComponent } from './softSkill/lista-soft-skill.component';
 import { NuevoSoftSkillComponent } from './softSkill/nuevo-soft-skill.component';
+import { FooterComponent } from './footer/footer.component';
+import { ListaProyectosComponent } from './proyectos/lista-proyectos.component';
+import { EditarProyectoComponent } from './proyectos/editar-proyecto.component';
+import { NuevoProyectoComponent } from './proyectos/nuevo-proyecto.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +67,10 @@ import { NuevoSoftSkillComponent } from './softSkill/nuevo-soft-skill.component'
     EditarSoftSkillComponent,
      ListaSoftSkillComponent,
      NuevoSoftSkillComponent,
+     FooterComponent,
+     ListaProyectosComponent,
+     EditarProyectoComponent,
+     NuevoProyectoComponent,
 
   ],
   imports: [

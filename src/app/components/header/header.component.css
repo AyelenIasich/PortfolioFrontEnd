@@ -46,4 +46,6 @@ nav .media-icons {
   padding-bottom: 0.3em !important;
 }
 
-
+#header{
+  z-index: 2;
+}

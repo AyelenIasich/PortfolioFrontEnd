@@ -31,7 +31,7 @@ export class EditarSoftSkillComponent implements OnInit {
           this.toastr.success('Soft skill actualizada', 'OK', {
             timeOut: 3000,
           });
-          this.router.navigate(['/']);
+          window.location.href='/#softSkill';
         },
         (err) => {
           this.toastr.error(err.error.mensaje, 'Fail', {

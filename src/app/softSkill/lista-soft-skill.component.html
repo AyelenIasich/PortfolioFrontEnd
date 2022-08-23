@@ -1,7 +1,7 @@
 <section id="softSkill" >
   <div class="container mt-5 pt-5 mb-5 pb-5" >
     <div class="row mb-5 ">
-      <div class="col-7 col-sm-6 col-md-5  col-lg-4 col-xl-3 text-center ms-1">
+      <div class="col-7 col-sm-6 col-md-5  col-lg-4 col-xl-3 text-center ">
         <div class="skills-title pt-2 pb-1 mb-2 ">
           <h3 class="h4">Soft Skills</h3>
         </div>
@@ -11,7 +11,7 @@
       <div class="col mb-4">
         <button
           type="button"
-          class="btn btn-outline-inicio mb-3"
+          class="btn btn-outline-inicio btn-lg mb-3"
           routerLink="/softskill"
           *ngIf="isAdmin"
         >
@@ -19,8 +19,8 @@
         </button>
       </div>
     </div>
-    <div class="row row-cols-sm-4 row-cols-md-3 row-cols-lg-4  row-cols-xl-4 mb-5">
-      <div class="col-4  ps-md-4 pe-md-4  justify-text-center"  *ngFor="let softSkill of ListaSoftSkill">
+    <div class="row row-cols-sm-3 row-cols-md-3 row-cols-lg-4  row-cols-xl-4 mb-5">
+      <div class="col-6  ps-md-5 pe-md-5  justify-text-center"  *ngFor="let softSkill of ListaSoftSkill">
        <div class="row">
         <div class="col text-center titulo-skills mb-2 mt-5"><h3 class="h5">{{softSkill.softSkill}}</h3></div>
        </div>

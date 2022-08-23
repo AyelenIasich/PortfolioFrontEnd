@@ -1,8 +1,9 @@
-<main id="main">
-  <div class="container-fluid banner p-0">
-    <img [src]="persona.banner" id="imagen-banner" class="img-banner"/>
+
+<main id="main ">
+  <div class="container-fluid banner p-0 ">
+    <img [src]="persona.banner" id="imagen-banner" class="img-banner" />
   </div>
-  <div class="overlay">
+  <div class="overlay  ">
     <div class="container-fluid p-0">
       <div class="row align-items-md-end row-overlay">
         <div class="col-sm-12 col-md-6 p-0">
@@ -18,38 +19,49 @@
       </div>
     </div>
   </div>
-  <div class="container main">
-    <div class="row align-items-center justify-content-center">
-      <div class="col order-2 col-md-6 intro pb-5 pb-lg-0">
-        <div class="info ms-2">
-          <h2 class="display-2 mt-2">
+  <div class="container main  margin-bottom">
+    <div class="row align-items-center justify-content-center row-principal -xl-5 pt-lg-5 pt-xl-0 row-main">
+      <div class="col order-2 col-md-6 intro  ms-3 ms-md-0 me-3 me-md-0 pb-lg-0">
+        <div class="info  ms-2">
+          <h2 class="display-2 mt-3 mt-md-0">
             <span id="firstName">{{ persona.nombre }}</span>
             {{ persona.apellido }}
           </h2>
-          <h3 class="lh-sm">{{ persona.titulo }}</h3>
-          <p class="fs-6 lh-base">
+          <h3 class="lh-sm mt-3 mt-md-0">{{ persona.titulo }}</h3>
+          <p class="fs-6 lh-base mt-3 mt-md-0 descripcion">
             {{ persona.descripcionMain }}
           </p>
-          <a
-            href="../../../assets/cvdownload/Ayelén_Iasich_CV.pdf"
-            download="AyelénIasichCV.pdf"
-            target="_blank"
-            class="btn btn-primary"
-            >Descargar CV</a
-          ><button
-            class="btn btn-outline-editar ps-4 pe-4 ms-2"
-            routerLink="/persona/{{ persona.id }}"
-            *ngIf="isAdmin"
-          >
-            <i class="fa-solid fa-pen"></i>
-            Editar Main
-          </button>
         </div>
+<div class="col-6 col-sm-12 col-md-12 col-lg-8 mt-4 mt-md-0 ">
+  <div class="row p-0 mb-3">
+          <div class="col-12 col-sm-6 col-lg-6 ">
+            <a
+              href="../../../assets/cvdownload/Ayelén_Iasich_CV.pdf"
+              download="AyelénIasichCV.pdf"
+              target="_blank"
+              class="btn btn-dowload"
+              >Descargar CV</a
+            >
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-6 pt-3 pt-sm-0 ms-0 ps-md-1">
+            <button
+              class="btn btn-outline-editar "
+              routerLink="/persona/{{ persona.id }}"
+              *ngIf="isAdmin"
+            >
+              <i class="fa-solid fa-pen"></i>
+              Editar Main
+            </button>
+          </div>
+        </div>
+</div>
+
       </div>
-      <div class="col-md-6 align-self-center order-md-2">
+      <div class="col-md-6 align-self-center order-md-2 columna-imagen">
         <div class="text-center">
           <img
-            src="{{persona.imagenMain}}"
+            src="{{ persona.imagenMain }}"
             alt="Imagen de Desarrolladora"
             class="aye-img"
           />

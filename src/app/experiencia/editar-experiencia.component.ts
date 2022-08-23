@@ -38,7 +38,7 @@ export class EditarExperienciaComponent implements OnInit {
         this.toastr.success('Experiencia actualizada', 'OK', {
           timeOut: 3000,
         });
-        this.router.navigate(['/']);
+             window.location.href='/#experiencia';
       },
       (err) => {
         this.toastr.error(err.error.mensaje, 'Fail', {

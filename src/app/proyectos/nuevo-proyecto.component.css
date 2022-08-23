@@ -7,7 +7,7 @@
 /* ============= Background ================ */
 
 .background {
-  min-height: 92vh;
+  height: 100%;
   background-color: #e5e5f7;
   opacity: 0.5;
   background-image: radial-gradient(#6a59d1 0.75px, transparent 0.75px),
@@ -18,14 +18,12 @@
   position: absolute;
 }
 
-#about-descripcion {
+#nuevo-proyecto {
   position: relative;
-
-
 }
 
-#about-descripcion .container-fluid,
-#about-descripcion .row {
+#nuevo-proyecto .container-fluid,
+#nuevo-proyecto .row {
   height: 100%;
 }
 
@@ -45,16 +43,15 @@
   color: #3c3b3b;
   font-family: "Poppins";
   cursor: pointer;
-
 }
-
 
 .form label {
   cursor: pointer;
 }
 
-/* ============= Botón Guardar ================ */
-.btn-outline-guardar {
+
+/* ============= Boton Crear ================ */
+.btn-outline-crear {
   border: none;
   color: white !important;
   font-weight: 500 !important;
@@ -71,11 +68,11 @@
   );
 }
 
-.btn-outline-guardar:hover {
+.btn-outline-crear:hover {
   box-shadow: inset 300px 0 0 0 rgb(203, 114, 194) !important;
 }
 
-/* ============= Botón Volver ================ */
+/* ============= Boton Volver ================ */
 
 .btn-outline-volver {
   border-color: var(--main-color-light) !important;
@@ -87,6 +84,7 @@
   background-color: var(--main-color-light) !important;
   color: white !important;
 }
+
 /* ============= Título ================ */
 
 .title {

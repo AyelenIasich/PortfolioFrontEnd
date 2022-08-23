@@ -1,0 +1,77 @@
+<section id="lista-proyectos">
+  <div class="container mt-5 pt-5 mb-5 pb-5" id="listaProyectos">
+    <div class="text-center mt-2 mb-5">
+      <h1 class="section-title-01 text-center display-4">Proyectos</h1>
+      <h2 class="section-title-02 text-center display-6">Proyectos</h2>
+    </div>
+    <div class="row">
+      <div class="col mb-3">
+        <button
+          type="button"
+          class="btn btn-outline-nuevo mb-3 btn-lg"
+          routerLink="/proyectos"
+          *ngIf="isAdmin"
+        >
+          <i class="fa-solid fa-plus"></i> Nuevo
+        </button>
+      </div>
+    </div>
+
+    <div class="row row-cols-lg-2 row-cols-xl-3 mb-5">
+      <div
+        class="col-12 justify-text-center mb-5"
+        *ngFor="let proyecto of ListaProyecto"
+      >
+        <div class="row mb-2">
+          <div class="col-12 text-end">
+            <button class="btn btn-outline-eliminar" *ngIf="isAdmin" (click)="borrar(proyecto.id)">
+              <i class="fa-solid fa-trash-can"> </i>
+            </button>
+
+            <button class="btn btn-outline-editar ms-2" *ngIf="isAdmin"  routerLink="/proyectos/{{ proyecto.id }}">
+              <i class="fa-solid fa-pen"> </i>
+            </button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img
+            src="{{ proyecto.urlImagen }}"
+            class="card-img-top"
+            alt="Imagen del proyecto"
+          />
+          <div class="card-body">
+            <h5 class="card-title titulo mt-2 mb-3">
+              {{ proyecto.tituloProyecto }}
+            </h5>
+            <p class="card-text tecnologias">{{ proyecto.tecnologias }}</p>
+            <p class="card-text mb-4 descripcion">
+              {{ proyecto.descripcionProyecto }}
+            </p>
+            <div class="row p-0 mb-3">
+              <div class="col-6 me-0 pe-1">
+                <a
+                  href="#"
+                  class="btn btn-outline-codigo"
+                  href="{{ proyecto.urlRepositorio }}"
+                >
+                  <i class="fa-brands fa-github"></i> Ver Código</a
+                >
+              </div>
+
+              <div class="col-6 ms-0 ps-1">
+                <a
+                  href="#"
+                  class="btn btn-outline-proyecto"
+                  href="{{ proyecto.urlProyecto }}"
+                >
+                  <i class="fa-regular fa-eye"></i> Ver Proyecto</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

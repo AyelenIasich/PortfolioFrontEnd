@@ -1,5 +1,5 @@
 <section id="educacion">
-  <div class="container mt-5" id="listaEducacion">
+  <div class="container pt-5 mt-5" id="listaEducacion">
     <div class="text-center mt-2">
       <h1 class="section-title-01 text-center display-4">Educación</h1>
       <h2 class="section-title-02 text-center display-6">Educación</h2>
@@ -8,7 +8,7 @@
       <div class="col mb-2">
         <button
           type="button"
-          class="btn btn-outline-inicio mb-3"
+          class="btn btn-outline-nuevo btn-lg mb-3"
           routerLink="/educacion"
           *ngIf="isAdmin"
         >
@@ -29,7 +29,7 @@
               <img
                 src="{{ educacion.imagen }}"
                 class="img-fluid rounded-start"
-                alt="..."
+                alt="Logo del establecimiento educativo"
               />
             </div>
             <div class="col-9 align-self-center">

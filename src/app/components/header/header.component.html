@@ -24,10 +24,20 @@
       /></a>
       <button
         type="button"
-        class="btn btn-sm btn-outline-login px-2 fs-6 ms-auto me-4"
-        id="btn-login-sm"
+        *ngIf="!isLogged"
+        routerLink="/login"
+        class="btn btn-sm btn-outline-login px-2 fs-6 mt-md-0 me-4 ms-auto me-4"
       >
-        Login in
+        <i class="fas fa-sign-in-alt"></i> Iniciar Sesión
+      </button>
+      <button
+        type="button"
+        *ngIf="isLogged"
+        (click)="onLogOut()"
+        style="cursor: pointer"
+        class="btn btn-sm btn-outline-login px-2 fs-6 mt-md-0 me-4 ms-auto me-4"
+      >
+        <i class="fas fa-door-open"></i> Cerrar Sesión
       </button>
     </div>
 
@@ -49,20 +59,20 @@
           <a class="nav-link me-2" aria-current="page" href="#main">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link me-2" href="#about">Sobre mí</a>
+          <a class="nav-link me-2" href="#educacion">Educación</a>
         </li>
         <li class="nav-item">
           <a class="nav-link me-2" href="#skill">Skills</a>
         </li>
+
         <li class="nav-item">
-          <a class="nav-link me-2" href="#educacion">Portfolio</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-contact me-2" href="#">Contacto</a>
+          <a class="nav-link text-contact me-2" href="#lista-proyectos"
+            >Proyectos</a
+          >
         </li>
 
         <div
-          class="media-icons d-sm-none d-md-none d-lg-none d-xl-inline-block "
+          class="media-icons d-sm-none d-md-none d-lg-none d-xl-inline-block pt-3 pt-sm-0 ms-4 ms-sm-0"
         >
           <a class="navbar-brand" href="https://ar.linkedin.com/in/ayeiasich"
             ><img
@@ -71,7 +81,7 @@
               width="24"
               height="24"
           /></a>
-          <a class="navbar-brand" href="https://www.instagram.com/?hl=es"
+          <a class="navbar-brand" href="https://www.instagram.com/ashee.iasich/"
             ><img
               src="assets/Icons/Instagram.svg"
               alt=""
@@ -91,7 +101,7 @@
           type="button"
           *ngIf="!isLogged"
           routerLink="/login"
-          class= " btn btn-sm btn-outline-login px-2 fs-6 d-sm-none d-md-none d-lg-none d-xl-inline-block mt-2 mt-md-0"
+          class="btn btn-sm btn-outline-login px-2 fs-6 d-sm-none d-md-none d-lg-none d-xl-inline-block mt-4 mt-md-0"
         >
           <i class="fas fa-sign-in-alt"></i> Iniciar Sesión
         </button>
@@ -100,7 +110,7 @@
           *ngIf="isLogged"
           (click)="onLogOut()"
           style="cursor: pointer"
-          class=" btn btn-sm btn-outline-login px-2 fs-6 d-sm-none d-md-none d-lg-none d-xl-inline-block   mt-2 mt-md-0"
+          class="btn btn-sm btn-outline-login px-2 fs-6 d-sm-none d-md-none d-lg-none d-xl-inline-block mt-4 mt-md-0"
         >
           <i class="fas fa-door-open"></i> Cerrar Sesión
         </button>

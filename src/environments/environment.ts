@@ -10,7 +10,8 @@ export const environment = {
   aboutURL: 'http://localhost:8090/about/',
   trabajoURL: 'http://localhost:8090/trabajo/',
   skillURL: 'http://localhost:8090/skill/',
-  softSkillURL: 'http://localhost:8090/softskill/'
+  softSkillURL: 'http://localhost:8090/softskill/',
+  proyectoURL: 'http://localhost:8090/proyectos/',
 };
 
 /*

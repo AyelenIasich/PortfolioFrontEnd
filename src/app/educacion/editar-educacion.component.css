@@ -7,7 +7,7 @@
 /* ============= Background ================ */
 
 .background {
-  height: 100%;
+  min-height: 92vh;
   background-color: #e5e5f7;
   opacity: 0.5;
   background-image: radial-gradient(#6a59d1 0.75px, transparent 0.75px),
@@ -18,13 +18,13 @@
   position: absolute;
 }
 
-#educacion {
+#editar-educacion {
   position: relative;
 
 }
 
-#educacion .container-fluid,
-#educacion .row {
+#editar-educacion .container-fluid,
+#editar-educacion .row {
   height: 100%;
 }
 
@@ -49,8 +49,8 @@
   cursor: pointer;
 }
 
-/* Boton crear */
-.btn-outline-success {
+/* ============= Boton Guardar ================ */
+.btn-outline-guardar {
   border: none;
   color: white !important;
   font-weight: 500 !important;
@@ -67,11 +67,11 @@
   );
 }
 
-.btn-outline-success:hover {
+.btn-outline-guardar:hover {
   box-shadow: inset 300px 0 0 0 rgb(203, 114, 194) !important;
 }
 
-/* Boton volver */
+/* ============= Boton Volver ================ */
 
 .btn-outline-volver {
   border-color: var(--main-color-light) !important;
@@ -84,7 +84,7 @@
   color: white !important;
 }
 
-/* Titulo */
+/* ============= Título ================ */
 
 .title {
   font-weight: 500;
@@ -100,3 +100,4 @@
   width: 30px;
   background-color: var(--main-color-light);
 }
+

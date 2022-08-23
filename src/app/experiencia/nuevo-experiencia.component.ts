@@ -39,7 +39,7 @@ export class NuevoExperienciaComponent implements OnInit {
         this.toastr.success('Nueva lista de experiencia creada', 'OK', {
           timeOut: 3000,
         });
-        this.router.navigate(['/']);
+        window.location.href='/#experiencia';
       },
       (err) => {
         this.toastr.error(err.error.mensaje, 'Fail', {

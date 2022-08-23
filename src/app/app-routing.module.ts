@@ -16,6 +16,9 @@ import { NuevoSkillComponent } from './skills/lista-skill/nuevo-skill.component'
 import { EditarSkillComponent } from './skills/lista-skill/editar-skill.component';
 import { NuevoSoftSkillComponent } from './softSkill/nuevo-soft-skill.component';
 import { EditarSoftSkillComponent } from './softSkill/editar-soft-skill.component';
+import { EditarProyectoComponent } from './proyectos/editar-proyecto.component';
+import { NuevoProyectoComponent } from './proyectos/nuevo-proyecto.component';
+
 
 
 const routes: Routes = [
@@ -64,6 +67,18 @@ const routes: Routes = [
   {
     path: 'softskill',
     component: NuevoSoftSkillComponent,
+    canActivate: [EduGuardService],
+    data: { expectedRol: ['admin'] },
+  },
+  {
+    path: 'proyectos',
+    component: NuevoProyectoComponent,
+    canActivate: [EduGuardService],
+    data: { expectedRol: ['admin'] },
+  },
+  {
+    path: 'proyectos/:id',
+    component: EditarProyectoComponent,
     canActivate: [EduGuardService],
     data: { expectedRol: ['admin'] },
   },

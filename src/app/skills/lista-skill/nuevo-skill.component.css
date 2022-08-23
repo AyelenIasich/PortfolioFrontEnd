@@ -50,8 +50,8 @@
   cursor: pointer;
 }
 
-/* Boton crear */
-.btn-outline-success {
+/* ============= Botón crear ================ */
+.btn-outline-crear {
   border: none;
   color: white !important;
   font-weight: 500 !important;
@@ -68,11 +68,12 @@
   );
 }
 
-.btn-outline-success:hover {
+.btn-outline-crear:hover {
   box-shadow: inset 300px 0 0 0 rgb(203, 114, 194) !important;
 }
 
-/* Boton volver */
+
+/* ============= Botón volver ================ */
 
 .btn-outline-volver {
   border-color: var(--main-color-light) !important;
@@ -85,7 +86,8 @@
   color: white !important;
 }
 
-/* Titulo */
+
+/* ============= Título ================ */
 
 .title {
   font-weight: 500;

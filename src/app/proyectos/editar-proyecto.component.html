@@ -1,0 +1,181 @@
+<app-header></app-header>
+<div id="editar-proyecto">
+  <div class="container-fluid background"></div>
+  <div class="container">
+    <div class="row pt-4 pb-5">
+      <div class="col-10 col-md-7 col-lg-5 mx-auto form p-4 mb-5">
+        <form
+          name="formProyectoEditar "
+          (ngSubmit)="f.form.valid && onUpdate()"
+          novalidate
+          #f="ngForm"
+        >
+          <div class="row mt-1">
+            <div class="align-self-center mb-3 mt-2">
+              <h1 class="title h4">Editar proyecto</h1>
+            </div>
+          </div>
+          <div class="form-group mb-3 mt-2">
+            <label class="mb-2" for="tituloProyecto">Título del proyecto</label>
+            <input
+              placeholder="Mi primer juego"
+              type="text"
+              class="form-control"
+              id="tituloProyecto"
+              name="tituloProyecto"
+              [(ngModel)]="proyecto.tituloProyecto"
+              required
+              #tituloProyectoInput="ngModel"
+              [ngClass]="{
+                'is-invalid':
+                  tituloProyectoInput.touched ||
+                  (f.submitted && tituloProyectoInput.invalid)
+              }"
+              [ngClass]="{
+                'is-valid':
+                  tituloProyectoInput.touched && tituloProyectoInput.valid
+              }"
+            />
+            <div class="invalid-feedback">Este campo es requerido.</div>
+          </div>
+
+          <div class="form-group mb-4">
+            <label class="mb-2" for="tecnologias">Tecnologías</label>
+            <input
+              placeholder="HTML, CSS & Js"
+              type="text"
+              class="form-control"
+              id="tecnologias"
+              name="tecnologias"
+              [(ngModel)]="proyecto.tecnologias"
+              required
+              #tecnologiasInput="ngModel"
+              [ngClass]="{
+                'is-invalid':
+                  tecnologiasInput.touched ||
+                  (f.submitted && tecnologiasInput.invalid)
+              }"
+              [ngClass]="{
+                'is-valid': tecnologiasInput.touched && tecnologiasInput.valid
+              }"
+            />
+            <div class="invalid-feedback">Este campo es requerido.</div>
+          </div>
+          <div class="form-group mb-4">
+            <label class="mb-2" for="descripcionProyecto">Descripción</label>
+            <textarea
+              placeholder="Este proyecto tiene como objetivo..."
+              type="text"
+              class="form-control descripcion"
+              name="descripcionProyecto"
+              id="descripcionProyecto"
+              cols="30"
+              rows="4"
+              [(ngModel)]="proyecto.descripcionProyecto"
+              #descripcionProyectoInput="ngModel"
+              [ngClass]="{
+                'is-invalid':
+                  descripcionProyectoInput.touched ||
+                  (f.submitted && descripcionProyectoInput.invalid)
+              }"
+              [ngClass]="{
+                'is-valid':
+                  descripcionProyectoInput.touched &&
+                  descripcionProyectoInput.valid
+              }"
+            ></textarea>
+            <div class="invalid-feedback">Este campo es requerido.</div>
+          </div>
+
+
+          <div class="form-group mb-4">
+            <label class="mb-2" for="urlImagen">URL de la imagen</label>
+            <input
+              placeholder="https://ibb.co/qCMkTyp"
+              type="url"
+              class="form-control"
+              id="urlImagen"
+              name="urlImagen"
+              [(ngModel)]="proyecto.urlImagen"
+              required
+              #urlImagenInput="ngModel"
+              [ngClass]="{
+                'is-invalid':
+                urlImagenInput.touched ||
+                  (f.submitted && urlImagenInput.invalid)
+              }"
+              [ngClass]="{
+                'is-valid': urlImagenInput.touched && urlImagenInput.valid
+              }"
+            />
+            <div class="invalid-feedback">Este campo es requerido.</div>
+          </div>
+
+
+
+          <div class="form-group mb-4">
+            <label class="mb-2" for="urlProyecto">URL del proyecto</label>
+            <input
+              placeholder="https://ibb.co/qCMkTyp"
+              type="url"
+              class="form-control"
+              id="urlProyecto"
+              name="urlProyecto"
+              [(ngModel)]="proyecto.urlProyecto"
+              required
+              #urlProyectoInput="ngModel"
+              [ngClass]="{
+                'is-invalid':
+                  urlProyectoInput.touched ||
+                  (f.submitted && urlProyectoInput.invalid)
+              }"
+              [ngClass]="{
+                'is-valid': urlProyectoInput.touched && urlProyectoInput.valid
+              }"
+            />
+            <div class="invalid-feedback">Este campo es requerido.</div>
+          </div>
+
+
+          <div class="form-group mb-4">
+            <label class="mb-2" for="urlRepositorio">URL del repositorio</label>
+            <input
+              placeholder="https://ibb.co/qCMkTyp"
+              type="url"
+              class="form-control"
+              id="urlRepositorio"
+              name="urlRepositorio"
+              [(ngModel)]="proyecto.urlRepositorio"
+              required
+              #urlRepositorioInput="ngModel"
+              [ngClass]="{
+                'is-invalid':
+                  urlRepositorioInput.touched ||
+                  (f.submitted && urlRepositorioInput.invalid)
+              }"
+              [ngClass]="{
+                'is-valid':
+                  urlRepositorioInput.touched && urlRepositorioInput.valid
+              }"
+            />
+            <div class="invalid-feedback">Este campo es requerido.</div>
+          </div>
+
+
+          <div class="row justify-content-center align-items-center mb-3 pt-2">
+            <div class="col-6">
+              <a href="#lista-proyectos" class="btn btn-outline-volver col-6">
+                <i class="fa-solid fa-angle-left"></i> Volver</a
+              >
+            </div>
+            <div class="col-6">
+              <button class="btn btn-outline-crear col-6 pt-2">
+                <i class="fa-solid fa-pen-to-square"></i> Guardar
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

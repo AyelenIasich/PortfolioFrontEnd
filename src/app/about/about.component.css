@@ -21,28 +21,7 @@
   color: white !important;
 }
 
-/* =================== Boton de Editar ================= */
-.btn-outline-guardar:hover {
-  box-shadow: inset 500px 0 0 0 rgb(203, 114, 194) !important;
-}
-
-.btn-outline-guardar {
-  border: none;
-
-  color: white !important;
-  font-weight: 500;
-  box-shadow: inset 0 0 0 0 rgb(203, 114, 194) !important;
-  transition: ease-out 0.5s;
-  background: rgb(203, 114, 194);
-  background: linear-gradient(
-    53deg,
-    rgba(203, 114, 194, 1) 0%,
-    rgba(143, 116, 212, 1) 56%,
-    rgba(106, 89, 209, 1) 100%
-  );
-}
-
-/* =================== Boton de Editar Imagen ================= */
+/* =================== Boton de Editar  ================= */
 
 .btn-outline-editar:hover {
   box-shadow: inset 300px 0 0 0 rgb(203, 114, 194) !important;
@@ -53,7 +32,7 @@
 
   color: white !important;
   font-weight: 500;
-  transform: translateY(16px) !important;
+  transform: translateY(-10px) !important;
 
   box-shadow: inset 0 0 0 0 rgb(203, 114, 194) !important;
   transition: ease-out 0.5s;
@@ -66,10 +45,6 @@
   );
 }
 
-.btn-outline-inicio:hover {
-  box-shadow: inset 300px 0 0 0 rgb(203, 114, 194) !important;
-}
-
 /* ==================== imagen =============== */
 .about-img {
   position: relative;
@@ -78,28 +53,27 @@
   max-width: 100%;
   border-radius: 10px;
   max-height: 500px;
-}
+  }
 
 
 /* ===================== titulos y subtitulos============== */
 .about-info .description h3 {
   font-weight: 600;
-  font-size: 2em;
 }
 .about-info .description h4 {
   font-weight: 600;
-  font-size: 1.3em;
+
   color: #4b4b4b;
-  padding-bottom:18px;
+  padding-bottom: 18px;
 }
 
-.h{
+.h {
   margin-right: auto;
   margin-left: auto;
-  height:2px;
+  height: 2px;
   border: 0 none;
   background-color: #d7d7d7;
-  width:70%;
+  width: 70%;
   text-align: center;
 }
 
@@ -121,7 +95,7 @@
 
 .section-title-02 {
   font-weight: 700;
-  transform: translateY(-65px);
+  transform: translateY(-70px);
   position: relative;
 }
 
@@ -137,13 +111,26 @@
 /* ====================== End Titulo ========================*/
 /* ====================== Media query ========================*/
 
-@media screen and (min-width: 992px) and (max-width: 1200px) {
-  h5 {
-    font-size: 1em !important;
-    font-weight: 600 !important;
+@media screen and (min-width: 1200px) {
+  .about-info .description h3 {
+    font-size: 2em;
   }
+  .about-info .description h4 {
+    font-size: 1.3em;
+  }
+}
+
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
   p {
     font-size: 0.8em !important;
+  }
+}
+
+@media screen and (min-width: 731px) and (max-width: 991px) {
+  p {
+    text-align: justify;
+
   }
 }
 
@@ -155,12 +142,10 @@
     font-size: 2em;
     transform: translateY(-65px);
   }
-  h5 {
-    font-size: 1.2em;
-    font-weight: 600 !important;
-  }
+
   p {
     font-size: 0.9em !important;
+    text-align: justify;
   }
 }
 
@@ -172,12 +157,19 @@
     font-size: 2em;
     transform: translateY(-65px);
   }
-  h5 {
-    font-size: 1em;
-    font-weight: 600 !important;
-  }
 
   .titulo {
     font-size: 0.9em !important;
+  }
+
+  .about-info .description h3 {
+    font-size: 1.4em;
+  }
+  .about-info .description h4 {
+    font-size: 1.1em;
+
+  }
+  p{
+    text-align: justify;
   }
 }

@@ -32,7 +32,7 @@ export class EditarEducacionComponent implements OnInit {
         this.toastr.success('Educación actualizada', 'OK', {
           timeOut: 3000,
         });
-        this.router.navigate(['/']);
+        window.location.href='/#educacion';
       },
       (err) => {
         this.toastr.error(err.error.mensaje, 'Fail', {

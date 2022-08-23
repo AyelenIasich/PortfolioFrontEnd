@@ -45,7 +45,7 @@ export class NuevoEducacionComponent implements OnInit {
         this.toastr.success('Nueva lista de educación creada', 'OK', {
           timeOut: 3000,
         });
-        this.router.navigate(['/']);
+        window.location.href='/#educacion';
       },
       (err) => {
         this.toastr.error(err.error.mensaje, 'Fail', {

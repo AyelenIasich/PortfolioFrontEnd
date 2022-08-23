@@ -25,6 +25,9 @@
   );
 }
 
+.btn-outline-inicio:hover {
+  box-shadow: inset 300px 0 0 0 rgb(203, 114, 194) !important;
+}
 
 /* =================== Boton de Editar ================= */
 .btn-outline-editar:hover {
@@ -47,9 +50,6 @@
   );
 }
 
-.btn-outline-inicio:hover {
-  box-shadow: inset 300px 0 0 0 rgb(203, 114, 194) !important;
-}
 
 /* =================== Boton de Borrar ================= */
 
@@ -103,6 +103,16 @@
   min-height: 250px!important;
   align-items: center!important;
 }
+}
+@media screen and (min-width: 1200px) and (max-width: 1399px) {
+  .card {
+    min-height: 248px!important;
+    align-self: center !important;
+  }
+  .body-tarjeta {
+    min-height: 248px!important;
+    align-items: center !important;
+  }
 }
 
 @media screen and (min-width: 992px) and (max-width:1200px){
@@ -191,12 +201,8 @@ p{
 
 
 p {
-
   color:#757575;
   font-weight: 500;
-  /* font-size: 0.9rem; */
-
-
 
 }
 

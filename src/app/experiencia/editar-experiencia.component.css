@@ -7,7 +7,7 @@
 /* ============= Background ================ */
 
 .background {
-  height: 100%;
+  min-height: 92vh;
   background-color: #e5e5f7;
   opacity: 0.5;
   background-image: radial-gradient(#6a59d1 0.75px, transparent 0.75px),
@@ -18,13 +18,13 @@
   position: absolute;
 }
 
-#experiencia {
+#editar-experiencia {
   position: relative;
 
 }
 
-#experiencia .container-fluid,
-#experiencia .row {
+#editar-experiencia .container-fluid,
+#editar-experiencia .row {
   height: 100%;
 }
 

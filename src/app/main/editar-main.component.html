@@ -1,7 +1,7 @@
 <app-header></app-header>
 <div id="educacion">
   <div class="container-fluid background"></div>
-  <div class="container pt-5">
+  <div class="container pt-5 ">
     <div class="row pt-4 pb-5">
       <div class="col-10 col-md-7 col-lg-5 mx-auto form p-4 mb-5">
         <form
@@ -89,14 +89,17 @@
           </div>
           <div class="form-group mb-4">
             <label class="mb-2" for="descripcion">Descripción</label>
-            <input
+
+            <textarea
               placeholder="Soy estudiante avanzada del profesorado de inglés"
               type="text"
-              class="form-control"
-              id="descripcion"
+              class="form-control descripcion"
               name="descripcion"
-              required
+              id="descripcion"
+              cols="30"
+              rows="4"
               [(ngModel)]="persona.descripcionMain"
+              required
               #descripcionPInput="ngModel"
               [ngClass]="{
                 'is-invalid':
@@ -106,7 +109,7 @@
               [ngClass]="{
                 'is-valid': descripcionPInput.touched && descripcionPInput.valid
               }"
-            />
+            ></textarea>
             <div class="invalid-feedback">Este campo es requerido.</div>
           </div>
           <div class="form-group mb-4">
