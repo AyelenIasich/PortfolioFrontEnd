@@ -4,14 +4,15 @@
 
 export const environment = {
   production: false,
-  educacionURL : 'http://localhost:8090/educacion/',
-  authURL : 'http://localhost:8090/auth/',
-  personaURL : 'http://localhost:8090/persona/',
-  aboutURL: 'http://localhost:8090/about/',
-  trabajoURL: 'http://localhost:8090/trabajo/',
-  skillURL: 'http://localhost:8090/skill/',
-  softSkillURL: 'http://localhost:8090/softskill/',
-  proyectoURL: 'http://localhost:8090/proyectos/',
+
+  educacionURL : 'https://myportfolioayeleniasich.herokuapp.com/educacion/',
+  authURL : 'https://myportfolioayeleniasich.herokuapp.com/auth/',
+  personaURL : 'https://myportfolioayeleniasich.herokuapp.com/persona/',
+  aboutURL: 'https://myportfolioayeleniasich.herokuapp.com/about/',
+  trabajoURL: 'https://myportfolioayeleniasich.herokuapp.com/trabajo/',
+  skillURL: 'https://myportfolioayeleniasich.herokuapp.com/skill/',
+  softSkillURL: 'https://myportfolioayeleniasich.herokuapp.com/softskill/',
+  proyectoURL: 'https://myportfolioayeleniasich.herokuapp.com/proyectos/',
 };
 
 /*
