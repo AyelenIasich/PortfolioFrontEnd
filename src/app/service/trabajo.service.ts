@@ -1,14 +1,15 @@
 import { HttpClient} from '@angular/common/http';
 import {Trabajo} from '../models/trabajo';
 import { Observable} from 'rxjs';
-import { environment } from 'src/environments/environment';
+// import { environment } from 'src/environments/environment';
 import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TrabajoService {
-  trabajoURL = environment.trabajoURL;
+  trabajoURL = 'https://myportfolioayeleniasich.herokuapp.com/trabajo/';
+  // trabajoURL = environment.trabajoURL;
 
 
   constructor(private httpClient:HttpClient) { }

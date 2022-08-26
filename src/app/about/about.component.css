@@ -127,12 +127,7 @@
   }
 }
 
-@media screen and (min-width: 731px) and (max-width: 991px) {
-  p {
-    text-align: justify;
 
-  }
-}
 
 @media screen and (max-width: 730px) {
   .section-title-01 {
@@ -145,7 +140,7 @@
 
   p {
     font-size: 0.9em !important;
-    text-align: justify;
+
   }
 }
 
@@ -169,7 +164,5 @@
     font-size: 1.1em;
 
   }
-  p{
-    text-align: justify;
-  }
+
 }

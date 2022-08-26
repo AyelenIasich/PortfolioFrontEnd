@@ -1,26 +1,27 @@
 export class Trabajo {
   id?: number;
-  direccionTrab: string;
   tituloTrab: string;
   inicioTrab: number;
   finTrab: number;
   descripcionTrab: string;
   urlTrab: string;
-
+  direccionTrab?: string;
 
   constructor(
-    direccionTrab: string,
+
     tituloTrab: string,
     inicioTrab: number,
     finTrab: number,
     descripcionTrab: string,
-    urlTrab: string
+    urlTrab: string,
+    direccionTrab: string
   ) {
-    this.direccionTrab = direccionTrab;
+
     this.tituloTrab = tituloTrab;
     this.inicioTrab = inicioTrab;
     this.finTrab = finTrab;
     this.descripcionTrab = descripcionTrab;
     this.urlTrab = urlTrab;
+    this.direccionTrab = direccionTrab;
   }
 }

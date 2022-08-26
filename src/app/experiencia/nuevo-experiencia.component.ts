@@ -11,12 +11,12 @@ import { TrabajoService } from '../service/trabajo.service';
   styleUrls: ['./nuevo-experiencia.component.css'],
 })
 export class NuevoExperienciaComponent implements OnInit {
-  tituloTrab: string = '';
+  tituloTrab: string= '';
   inicioTrab: number;
   finTrab: number;
-  descripcionTrab: string = '';
-  urlTrab: string = '';
-  direccionTrab: string = '';
+  descripcionTrab: string= '';
+  urlTrab: string= '';
+  direccionTrab: string= '';
 
 
   constructor(
@@ -26,13 +26,19 @@ export class NuevoExperienciaComponent implements OnInit {
   ) {}
 
   onCreate(): void {
+
+
+
     const trabajo = new Trabajo(
-      this.direccionTrab,
+
       this.tituloTrab,
       this.inicioTrab,
       this.finTrab,
       this.descripcionTrab,
-      this.urlTrab
+      this.urlTrab,
+      this.direccionTrab
+
+
     );
     this.trabajoService.save(trabajo).subscribe(
       (data) => {

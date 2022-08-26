@@ -5,14 +5,14 @@
 export const environment = {
   production: false,
 
-  educacionURL : 'https://myportfolioayeleniasich.herokuapp.com/educacion/',
-  authURL : 'https://myportfolioayeleniasich.herokuapp.com/auth/',
-  personaURL : 'https://myportfolioayeleniasich.herokuapp.com/persona/',
-  aboutURL: 'https://myportfolioayeleniasich.herokuapp.com/about/',
-  trabajoURL: 'https://myportfolioayeleniasich.herokuapp.com/trabajo/',
-  skillURL: 'https://myportfolioayeleniasich.herokuapp.com/skill/',
-  softSkillURL: 'https://myportfolioayeleniasich.herokuapp.com/softskill/',
-  proyectoURL: 'https://myportfolioayeleniasich.herokuapp.com/proyectos/',
+  // educacionURL : 'https://myportfolioayeleniasich.herokuapp.com/educacion/',
+  // authURL : 'https://myportfolioayeleniasich.herokuapp.com/auth/',
+  // personaURL : 'https://myportfolioayeleniasich.herokuapp.com/persona/',
+  // aboutURL: 'https://myportfolioayeleniasich.herokuapp.com/about/',
+  // trabajoURL: 'https://myportfolioayeleniasich.herokuapp.com/trabajo/',
+  // skillURL: 'https://myportfolioayeleniasich.herokuapp.com/skill/',
+  // softSkillURL: 'https://myportfolioayeleniasich.herokuapp.com/softskill/',
+  // proyectoURL: 'https://myportfolioayeleniasich.herokuapp.com/proyectos/',
 };
 
 /*

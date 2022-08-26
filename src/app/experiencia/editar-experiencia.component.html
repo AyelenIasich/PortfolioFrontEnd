@@ -42,23 +42,23 @@
           <div class="row">
             <div class="col col-12 col-sm-6">
               <div class="form-group mb-4">
-                <label class="mb-2" for="finTrab">Año de inicio</label>
+                <label class="mb-2" for="inicioTrab">Año de inicio</label>
                 <input
                   placeholder="2018"
                   type="number"
                   class="form-control"
-                  id="finTrab"
-                  name="finTrab"
+                  id="inicioTrab"
+                  name="inicioTrab"
                   [(ngModel)]="trabajo.inicioTrab"
                   required
-                  #finTrabInput="ngModel"
+                  #inicioTrabInput="ngModel"
                   [ngClass]="{
                     'is-invalid':
-                      finTrabInput.touched ||
-                      (f.submitted && finTrabInput.invalid)
+                    inicioTrabInput.touched ||
+                      (f.submitted && inicioTrabInput.invalid)
                   }"
                   [ngClass]="{
-                    'is-valid': finTrabInput.touched && finTrabInput.valid
+                    'is-valid': inicioTrabInput.touched && inicioTrabInput.valid
                   }"
                 />
                 <div class="invalid-feedback">Este campo es requerido.</div>
@@ -133,7 +133,7 @@
             />
           </div>
           <div class="form-group mb-4">
-            <label class="mb-2" for="urlExperiencia ">Url de la imagen</label>
+            <label class="mb-2" for="urlTrab ">Url de la imagen</label>
             <input
               placeholder="https://ibb.co/qCMkTyp"
               type="url"

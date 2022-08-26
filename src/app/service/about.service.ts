@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
+
 import { About } from '../models/about';
 
 @Injectable({
@@ -11,7 +11,7 @@ export class AboutService {
 
 
 
-  aboutURL = environment.aboutURL;
+  aboutURL = 'https://myportfolioayeleniasich.herokuapp.com/about/';
 
   constructor(private httpClient: HttpClient) {}
 

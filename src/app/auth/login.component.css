@@ -6,7 +6,7 @@
 
 /* =================== Boton de iniciar sesion ================= */
 .btn-outline-ingresar:hover {
-  box-shadow: inset 200px 0 0 0 rgb(203, 114, 194) !important;
+  box-shadow: inset 300px 0 0 0 rgb(203, 114, 194) !important;
 }
 
 .btn-outline-ingresar {

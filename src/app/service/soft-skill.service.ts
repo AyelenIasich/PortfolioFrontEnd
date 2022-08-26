@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
+
 import { HttpClient } from '@angular/common/http';
 import { SoftSkill } from '../models/soft-skill';
 
@@ -8,7 +8,7 @@ import { SoftSkill } from '../models/soft-skill';
   providedIn: 'root',
 })
 export class SoftSkillService {
-  softSkillURL = environment.softSkillURL;
+  softSkillURL = 'https://myportfolioayeleniasich.herokuapp.com/softskill/';
 
   constructor(private httpClient: HttpClient) {}
 

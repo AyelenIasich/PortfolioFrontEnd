@@ -203,3 +203,9 @@ p {
     transform: translateY(-51px);
   }
 }
+@media screen and (max-width: 362px) {
+  .links-codigo {
+    font-size: 0.9em!important;
+  }
+
+}
