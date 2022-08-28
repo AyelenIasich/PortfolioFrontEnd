@@ -1,3 +1,19 @@
+Bienvenidos! Soy aye...
+
+Este repositorio contiene el Front end de mi proyecto integrador final para Argentina Programa #YoProgramo. 
+
+Es una aplicación web full stack que muestra mis datos personales, estudios cursados, experiencia laboral y mi conocimiento en tecnologías.
+
+Es una aplicación de arquitectura distribuida: 
+  - Front end con Angular y Bootstrap;
+  - Back end con Spring Boot y
+  - Base de datos con MySQL. 
+
+Esta securizada con JWT con Spring Boot y Angular.
+
+Las diferentes capas del proyecto se encuentra en diferentes servidores. El Front end en Firebase, El Back end en Heroku y la base de datos MySQL en Clever Cloud.
+
+
 # PortolioFront
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.4.
